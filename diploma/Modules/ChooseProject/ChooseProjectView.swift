@@ -26,9 +26,7 @@ struct ChooseProjectView: View {
                 folderPicker.begin { response in
                     if response == .OK {
                         let pickedFolder = folderPicker.urls[0]
-                        viewModel.readProject(path: pickedFolder, comletionHandler: { projectError in
-                            openWindow(id: "project", value: projectError)
-                        })
+                        viewModel.readProject(path: pickedFolder)
                     }
                 }
             }

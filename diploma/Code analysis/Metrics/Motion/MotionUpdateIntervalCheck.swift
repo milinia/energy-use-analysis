@@ -9,7 +9,7 @@ import Foundation
 
 class MotionUpdateIntervalCheck: MetricCheck {
     
-    let regexPattern: String = "(CMMotionManager).+([setGyroUpdateInterval | magnetometerUpdateInterval | accelerometerUpdateInterval | deviceMotionUpdateInterval])"
+    let regexPattern: String = "(CMMotionManager).+([setGyroUpdateInterval|magnetometerUpdateInterval|accelerometerUpdateInterval|deviceMotionUpdateInterval])"
     let regexChecker: RegexCheck
     
     init(regexChecker: RegexCheck) {

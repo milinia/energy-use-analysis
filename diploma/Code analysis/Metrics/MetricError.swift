@@ -22,7 +22,7 @@ enum Location: String, MetricError {
         return self.rawValue
     }
 }
-enum Timer: String, MetricError {
+enum TimerError: String, MetricError {
     case timerTimeout = ""
     case timerTolerace = "Not set tolelance for timer"
     

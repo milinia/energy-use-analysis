@@ -9,7 +9,7 @@ import Foundation
 
 class MotionStopUpdatesCheck: MetricCheck {
     
-    let regexPattern: String = "(CMMotionManager).+([stopGyroUpdates | stopMagnetometerUpdates | stopAccelerometerUpdates | stopDeviceMotionUpdates])"
+    let regexPattern: String = "(CMMotionManager).+([stopGyroUpdates|stopMagnetometerUpdates|stopAccelerometerUpdates|stopDeviceMotionUpdates])"
     let regexChecker: RegexCheck
     
     init(regexChecker: RegexCheck) {

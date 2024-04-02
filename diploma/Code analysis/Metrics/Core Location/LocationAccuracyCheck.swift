@@ -9,7 +9,7 @@ import Foundation
 
 class LocationAccuracyCheck: MetricCheck {
     
-    let regexPattern: String = "(CLLocationManagerStateTracker).+(setDesiredAccuracy:[-1.0 | -2.0])"
+    let regexPattern: String = "(CLLocationManagerStateTracker).+(setDesiredAccuracy:[-1.0|-2.0])"
     let regexChecker: RegexCheck
     
     init(regexChecker: RegexCheck) {

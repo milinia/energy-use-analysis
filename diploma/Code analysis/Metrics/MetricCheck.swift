@@ -25,7 +25,7 @@ class BaseRegexChecker: RegexCheck {
     
     func checkForPattern(file: File, regexPattern: String, error: MetricError) -> [MetricErrorData] {
         if let text = String(data: file.data, encoding: .utf8) {
-            let errorLines = regexChecher.checkRegex(pattern: regexPattern, text: text)
+            let errorLines = regexChecher.checkTextRegex(pattern: regexPattern, text: text)
             var errors: [MetricErrorData]  = []
             for errorLine in errorLines {
                 errors.append(MetricErrorData(type: error, range: ErrorRange(start: errorLine, end: errorLine), file: file))

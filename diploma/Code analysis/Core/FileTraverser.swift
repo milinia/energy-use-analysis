@@ -15,7 +15,7 @@ final class FileTraverser {
         let syntaxTree = Parser.parse(source: fileContent)
 //        let syntaxVisitor = NodesTraverser(viewMode: .fixedUp)
 //        syntaxVisitor.walk(syntaxTree)
-        let syntaxVisitor = QoSDispatchQueueGlobalCheck(viewMode: .fixedUp)
+        let syntaxVisitor = CacheURLRequestCachePolicyCheck(viewMode: .fixedUp)
         syntaxVisitor.walk(syntaxTree)
         return syntaxTree
     }

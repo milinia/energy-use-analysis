@@ -12,7 +12,7 @@ final class ChooseProjectViewModel: ObservableObject {
     
     private let projectReader = ProjectReaderImpl(fileManager: FileManager())
     
-    func readProject(path: URL, comletionHandler: @escaping ((Project) -> Void)) {
+    func readProject(path: URL) {
         do {
             let temp = try projectReader.readProject(projectPath: path)
             let project = temp.0
@@ -20,7 +20,6 @@ final class ChooseProjectViewModel: ObservableObject {
             let projectTraverser = ProjectTraverserImpl()
             let errors = projectTraverser.traverse(files: files)
 //            let projectErrors = ProjectErrors(errors: errors, project: project)
-            comletionHandler(project)
         } catch {
             
         }

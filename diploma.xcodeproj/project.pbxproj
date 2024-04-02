@@ -14,25 +14,24 @@
 		E50600AF2B9E1C0600F998D5 /* MotionUpdateIntervalCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50600AE2B9E1C0600F998D5 /* MotionUpdateIntervalCheck.swift */; };
 		E51484472BA18A8200FB762D /* ReactionDeviceBatteryStateCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51484462BA18A8200FB762D /* ReactionDeviceBatteryStateCheck.swift */; };
 		E51484492BA1A40800FB762D /* QoSDispatchQueueGlobalCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51484482BA1A40800FB762D /* QoSDispatchQueueGlobalCheck.swift */; };
-		E514844C2BA1A60600FB762D /* SwiftBasicFormat in Frameworks */ = {isa = PBXBuildFile; productRef = E514844B2BA1A60600FB762D /* SwiftBasicFormat */; };
-		E514844E2BA1A60600FB762D /* SwiftCompilerPlugin in Frameworks */ = {isa = PBXBuildFile; productRef = E514844D2BA1A60600FB762D /* SwiftCompilerPlugin */; };
-		E51484502BA1A60600FB762D /* SwiftCompilerPluginMessageHandling in Frameworks */ = {isa = PBXBuildFile; productRef = E514844F2BA1A60600FB762D /* SwiftCompilerPluginMessageHandling */; };
-		E51484522BA1A60600FB762D /* SwiftDiagnostics in Frameworks */ = {isa = PBXBuildFile; productRef = E51484512BA1A60600FB762D /* SwiftDiagnostics */; };
-		E51484542BA1A60600FB762D /* SwiftIDEUtils in Frameworks */ = {isa = PBXBuildFile; productRef = E51484532BA1A60600FB762D /* SwiftIDEUtils */; };
-		E51484562BA1A60600FB762D /* SwiftOperators in Frameworks */ = {isa = PBXBuildFile; productRef = E51484552BA1A60600FB762D /* SwiftOperators */; };
-		E51484582BA1A60600FB762D /* SwiftParser in Frameworks */ = {isa = PBXBuildFile; productRef = E51484572BA1A60600FB762D /* SwiftParser */; };
-		E514845A2BA1A60600FB762D /* SwiftParserDiagnostics in Frameworks */ = {isa = PBXBuildFile; productRef = E51484592BA1A60600FB762D /* SwiftParserDiagnostics */; };
-		E514845C2BA1A60600FB762D /* SwiftRefactor in Frameworks */ = {isa = PBXBuildFile; productRef = E514845B2BA1A60600FB762D /* SwiftRefactor */; };
-		E514845E2BA1A60600FB762D /* SwiftSyntax in Frameworks */ = {isa = PBXBuildFile; productRef = E514845D2BA1A60600FB762D /* SwiftSyntax */; };
-		E51484602BA1A60600FB762D /* SwiftSyntaxBuilder in Frameworks */ = {isa = PBXBuildFile; productRef = E514845F2BA1A60600FB762D /* SwiftSyntaxBuilder */; };
-		E51484622BA1A60600FB762D /* SwiftSyntaxMacroExpansion in Frameworks */ = {isa = PBXBuildFile; productRef = E51484612BA1A60600FB762D /* SwiftSyntaxMacroExpansion */; };
-		E51484642BA1A60600FB762D /* SwiftSyntaxMacros in Frameworks */ = {isa = PBXBuildFile; productRef = E51484632BA1A60600FB762D /* SwiftSyntaxMacros */; };
-		E51484662BA1A60600FB762D /* SwiftSyntaxMacrosTestSupport in Frameworks */ = {isa = PBXBuildFile; productRef = E51484652BA1A60600FB762D /* SwiftSyntaxMacrosTestSupport */; };
 		E526A7DD2B1E0D31009046E1 /* diplomaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E526A7DC2B1E0D31009046E1 /* diplomaApp.swift */; };
 		E526A7DF2B1E0D31009046E1 /* ChooseProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E526A7DE2B1E0D31009046E1 /* ChooseProjectView.swift */; };
 		E526A7E12B1E0D36009046E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E526A7E02B1E0D36009046E1 /* Assets.xcassets */; };
 		E526A7E42B1E0D36009046E1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E526A7E32B1E0D36009046E1 /* Preview Assets.xcassets */; };
 		E53487E82B7DFD340063C047 /* FileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53487E72B7DFD340063C047 /* FileView.swift */; };
+		E53C26DC2BA434C900C8748B /* SwiftBasicFormat in Frameworks */ = {isa = PBXBuildFile; productRef = E53C26DB2BA434C900C8748B /* SwiftBasicFormat */; };
+		E53C26DE2BA434C900C8748B /* SwiftCompilerPlugin in Frameworks */ = {isa = PBXBuildFile; productRef = E53C26DD2BA434C900C8748B /* SwiftCompilerPlugin */; };
+		E53C26E02BA434C900C8748B /* SwiftCompilerPluginMessageHandling in Frameworks */ = {isa = PBXBuildFile; productRef = E53C26DF2BA434C900C8748B /* SwiftCompilerPluginMessageHandling */; };
+		E53C26E22BA434C900C8748B /* SwiftDiagnostics in Frameworks */ = {isa = PBXBuildFile; productRef = E53C26E12BA434C900C8748B /* SwiftDiagnostics */; };
+		E53C26E42BA434C900C8748B /* SwiftIDEUtils in Frameworks */ = {isa = PBXBuildFile; productRef = E53C26E32BA434C900C8748B /* SwiftIDEUtils */; };
+		E53C26E62BA434C900C8748B /* SwiftOperators in Frameworks */ = {isa = PBXBuildFile; productRef = E53C26E52BA434C900C8748B /* SwiftOperators */; };
+		E53C26E82BA434C900C8748B /* SwiftParser in Frameworks */ = {isa = PBXBuildFile; productRef = E53C26E72BA434C900C8748B /* SwiftParser */; };
+		E53C26EA2BA434C900C8748B /* SwiftParserDiagnostics in Frameworks */ = {isa = PBXBuildFile; productRef = E53C26E92BA434C900C8748B /* SwiftParserDiagnostics */; };
+		E53C26EC2BA434C900C8748B /* SwiftRefactor in Frameworks */ = {isa = PBXBuildFile; productRef = E53C26EB2BA434C900C8748B /* SwiftRefactor */; };
+		E53C26EE2BA434C900C8748B /* SwiftSyntax in Frameworks */ = {isa = PBXBuildFile; productRef = E53C26ED2BA434C900C8748B /* SwiftSyntax */; };
+		E53C26F02BA434C900C8748B /* SwiftSyntaxBuilder in Frameworks */ = {isa = PBXBuildFile; productRef = E53C26EF2BA434C900C8748B /* SwiftSyntaxBuilder */; };
+		E53C26F92BA4360C00C8748B /* SwiftSyntaxMacroExpansion in Frameworks */ = {isa = PBXBuildFile; productRef = E53C26F82BA4360C00C8748B /* SwiftSyntaxMacroExpansion */; };
+		E53C26FB2BA4360C00C8748B /* SwiftSyntaxMacros in Frameworks */ = {isa = PBXBuildFile; productRef = E53C26FA2BA4360C00C8748B /* SwiftSyntaxMacros */; };
 		E543679E2B59253600CFBAF7 /* FileTraverser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E543679D2B59253600CFBAF7 /* FileTraverser.swift */; };
 		E54367A32B5A770B00CFBAF7 /* ChooseProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54367A22B5A770B00CFBAF7 /* ChooseProjectViewModel.swift */; };
 		E54367A52B62B0EE00CFBAF7 /* ProjectTraverser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54367A42B62B0EE00CFBAF7 /* ProjectTraverser.swift */; };
@@ -46,6 +45,10 @@
 		E574AA832B85FA4100E5EEB2 /* LocationAccuracyCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = E574AA822B85FA4100E5EEB2 /* LocationAccuracyCheck.swift */; };
 		E574AA852B85FC0A00E5EEB2 /* LocationAllowBackgroundUpdateCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = E574AA842B85FC0A00E5EEB2 /* LocationAllowBackgroundUpdateCheck.swift */; };
 		E574AA872B85FC3D00E5EEB2 /* LocationStopCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = E574AA862B85FC3D00E5EEB2 /* LocationStopCheck.swift */; };
+		E598536B2BA5D6C400C3949D /* TimerToleranceCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = E598536A2BA5D6C400C3949D /* TimerToleranceCheck.swift */; };
+		E598536D2BA5D84400C3949D /* ReactionUseDevicePowerModeCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = E598536C2BA5D84400C3949D /* ReactionUseDevicePowerModeCheck.swift */; };
+		E598536F2BA5D86000C3949D /* NSCacheUsingCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = E598536E2BA5D86000C3949D /* NSCacheUsingCheck.swift */; };
+		E59853712BA5D8F900C3949D /* CacheURLRequestCachePolicyCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59853702BA5D8F900C3949D /* CacheURLRequestCachePolicyCheck.swift */; };
 		E5998C1A2B29D4C5001920B2 /* MetricCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5998C192B29D4C5001920B2 /* MetricCheck.swift */; };
 		E5998C1D2B29DE6C001920B2 /* ProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5998C1C2B29DE6C001920B2 /* ProjectView.swift */; };
 		E5D7E99B2B7FD6020018A5CA /* Files in Frameworks */ = {isa = PBXBuildFile; productRef = E5D7E99A2B7FD6020018A5CA /* Files */; };
@@ -86,6 +89,7 @@
 		E526A7E52B1E0D36009046E1 /* diploma.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = diploma.entitlements; sourceTree = "<group>"; };
 		E526A7F32B1E0D9D009046E1 /* XcodeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XcodeKit.framework; path = Library/Frameworks/XcodeKit.framework; sourceTree = DEVELOPER_DIR; };
 		E53487E72B7DFD340063C047 /* FileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileView.swift; sourceTree = "<group>"; };
+		E53C26D72BA4331600C8748B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		E543679D2B59253600CFBAF7 /* FileTraverser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileTraverser.swift; sourceTree = "<group>"; };
 		E54367A22B5A770B00CFBAF7 /* ChooseProjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseProjectViewModel.swift; sourceTree = "<group>"; };
 		E54367A42B62B0EE00CFBAF7 /* ProjectTraverser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTraverser.swift; sourceTree = "<group>"; };
@@ -99,6 +103,10 @@
 		E574AA822B85FA4100E5EEB2 /* LocationAccuracyCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAccuracyCheck.swift; sourceTree = "<group>"; };
 		E574AA842B85FC0A00E5EEB2 /* LocationAllowBackgroundUpdateCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAllowBackgroundUpdateCheck.swift; sourceTree = "<group>"; };
 		E574AA862B85FC3D00E5EEB2 /* LocationStopCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationStopCheck.swift; sourceTree = "<group>"; };
+		E598536A2BA5D6C400C3949D /* TimerToleranceCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TimerToleranceCheck.swift; path = "diploma/Code analysis/Metrics/Timer/TimerToleranceCheck.swift"; sourceTree = SOURCE_ROOT; };
+		E598536C2BA5D84400C3949D /* ReactionUseDevicePowerModeCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionUseDevicePowerModeCheck.swift; sourceTree = "<group>"; };
+		E598536E2BA5D86000C3949D /* NSCacheUsingCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSCacheUsingCheck.swift; sourceTree = "<group>"; };
+		E59853702BA5D8F900C3949D /* CacheURLRequestCachePolicyCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheURLRequestCachePolicyCheck.swift; sourceTree = "<group>"; };
 		E5998C192B29D4C5001920B2 /* MetricCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricCheck.swift; sourceTree = "<group>"; };
 		E5998C1C2B29DE6C001920B2 /* ProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectView.swift; sourceTree = "<group>"; };
 		E5D7E99F2B7FE67F0018A5CA /* String++RelativePath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String++RelativePath.swift"; sourceTree = "<group>"; };
@@ -114,47 +122,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E53C26DC2BA434C900C8748B /* SwiftBasicFormat in Frameworks */,
+				E53C26F02BA434C900C8748B /* SwiftSyntaxBuilder in Frameworks */,
 				E5D7E99B2B7FD6020018A5CA /* Files in Frameworks */,
-				E51484602BA1A60600FB762D /* SwiftSyntaxBuilder in Frameworks */,
-				E51484662BA1A60600FB762D /* SwiftSyntaxMacrosTestSupport in Frameworks */,
-				E51484582BA1A60600FB762D /* SwiftParser in Frameworks */,
-				E51484642BA1A60600FB762D /* SwiftSyntaxMacros in Frameworks */,
-				E51484622BA1A60600FB762D /* SwiftSyntaxMacroExpansion in Frameworks */,
-				E514845E2BA1A60600FB762D /* SwiftSyntax in Frameworks */,
-				E514844E2BA1A60600FB762D /* SwiftCompilerPlugin in Frameworks */,
-				E51484502BA1A60600FB762D /* SwiftCompilerPluginMessageHandling in Frameworks */,
-				E51484562BA1A60600FB762D /* SwiftOperators in Frameworks */,
-				E51484522BA1A60600FB762D /* SwiftDiagnostics in Frameworks */,
-				E514845A2BA1A60600FB762D /* SwiftParserDiagnostics in Frameworks */,
-				E51484542BA1A60600FB762D /* SwiftIDEUtils in Frameworks */,
-				E514845C2BA1A60600FB762D /* SwiftRefactor in Frameworks */,
-				E514844C2BA1A60600FB762D /* SwiftBasicFormat in Frameworks */,
+				E53C26DE2BA434C900C8748B /* SwiftCompilerPlugin in Frameworks */,
+				E53C26E62BA434C900C8748B /* SwiftOperators in Frameworks */,
+				E53C26EE2BA434C900C8748B /* SwiftSyntax in Frameworks */,
+				E53C26E42BA434C900C8748B /* SwiftIDEUtils in Frameworks */,
+				E53C26E82BA434C900C8748B /* SwiftParser in Frameworks */,
+				E53C26E22BA434C900C8748B /* SwiftDiagnostics in Frameworks */,
+				E53C26E02BA434C900C8748B /* SwiftCompilerPluginMessageHandling in Frameworks */,
+				E53C26FB2BA4360C00C8748B /* SwiftSyntaxMacros in Frameworks */,
+				E53C26EC2BA434C900C8748B /* SwiftRefactor in Frameworks */,
+				E53C26F92BA4360C00C8748B /* SwiftSyntaxMacroExpansion in Frameworks */,
+				E53C26EA2BA434C900C8748B /* SwiftParserDiagnostics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E50600A52B9CD2A800F998D5 /* Caсhing */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Caсhing";
-			sourceTree = "<group>";
-		};
 		E50600A62B9CD2FB00F998D5 /* QoS */ = {
 			isa = PBXGroup;
 			children = (
 				E51484482BA1A40800FB762D /* QoSDispatchQueueGlobalCheck.swift */,
 			);
 			path = QoS;
-			sourceTree = "<group>";
-		};
-		E50600A72B9CD30F00F998D5 /* Retry Delay */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Retry Delay";
 			sourceTree = "<group>";
 		};
 		E526A7D02B1E0D31009046E1 = {
@@ -177,8 +170,9 @@
 		E526A7DB2B1E0D31009046E1 /* diploma */ = {
 			isa = PBXGroup;
 			children = (
-				E5D7E99C2B7FE07B0018A5CA /* Extensions */,
 				E54367932B591D1300CFBAF7 /* Code analysis */,
+				E5B312642BBC3E160055EE57 /* Code correction */,
+				E5D7E99C2B7FE07B0018A5CA /* Extensions */,
 				E54367922B591CE100CFBAF7 /* App */,
 				E555350D2B32DFDD00217131 /* Resources */,
 				E5998C1B2B29DDC6001920B2 /* Modules */,
@@ -200,6 +194,7 @@
 		E526A7F02B1E0D9D009046E1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E53C26D72BA4331600C8748B /* XCTest.framework */,
 				E526A7F32B1E0D9D009046E1 /* XcodeKit.framework */,
 			);
 			name = Frameworks;
@@ -220,13 +215,13 @@
 			isa = PBXGroup;
 			children = (
 				E5998C192B29D4C5001920B2 /* MetricCheck.swift */,
-				E5DF10A82B970E74002BB05F /* MetricError.swift */,
 				E5DF10AC2B975B09002BB05F /* RegexChecker.swift */,
-				E5525B202BA0431000E55692 /* ComputingTask */,
-				E50600A72B9CD30F00F998D5 /* Retry Delay */,
-				E574AA8A2B85FCA500E5EEB2 /* Timer */,
+				E5DF10A82B970E74002BB05F /* MetricError.swift */,
+				E59853692BA5D61400C3949D /* Compute Tasks */,
+				E59853662BA5D5E400C3949D /* Retry Delay */,
+				E59853652BA5D5D800C3949D /* Caching */,
+				E59853642BA5D5D200C3949D /* Timer */,
 				E50600A62B9CD2FB00F998D5 /* QoS */,
-				E50600A52B9CD2A800F998D5 /* Caсhing */,
 				E574AA8B2B85FCAF00E5EEB2 /* Brightness */,
 				E5525B1D2B9F32F000E55692 /* Reaction */,
 				E574AA892B85FC9F00E5EEB2 /* Motion */,
@@ -277,15 +272,9 @@
 			children = (
 				E5525B1E2B9F332000E55692 /* ReactionLowPowerModeEnabledCheck.swift */,
 				E51484462BA18A8200FB762D /* ReactionDeviceBatteryStateCheck.swift */,
+				E598536C2BA5D84400C3949D /* ReactionUseDevicePowerModeCheck.swift */,
 			);
 			path = Reaction;
-			sourceTree = "<group>";
-		};
-		E5525B202BA0431000E55692 /* ComputingTask */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ComputingTask;
 			sourceTree = "<group>";
 		};
 		E555350D2B32DFDD00217131 /* Resources */ = {
@@ -325,13 +314,6 @@
 			path = Motion;
 			sourceTree = "<group>";
 		};
-		E574AA8A2B85FCA500E5EEB2 /* Timer */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Timer;
-			sourceTree = "<group>";
-		};
 		E574AA8B2B85FCAF00E5EEB2 /* Brightness */ = {
 			isa = PBXGroup;
 			children = (
@@ -341,6 +323,37 @@
 			path = Brightness;
 			sourceTree = "<group>";
 		};
+		E59853642BA5D5D200C3949D /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				E598536A2BA5D6C400C3949D /* TimerToleranceCheck.swift */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
+		E59853652BA5D5D800C3949D /* Caching */ = {
+			isa = PBXGroup;
+			children = (
+				E598536E2BA5D86000C3949D /* NSCacheUsingCheck.swift */,
+				E59853702BA5D8F900C3949D /* CacheURLRequestCachePolicyCheck.swift */,
+			);
+			path = Caching;
+			sourceTree = "<group>";
+		};
+		E59853662BA5D5E400C3949D /* Retry Delay */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Retry Delay";
+			sourceTree = "<group>";
+		};
+		E59853692BA5D61400C3949D /* Compute Tasks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Compute Tasks";
+			sourceTree = "<group>";
+		};
 		E5998C1B2B29DDC6001920B2 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
@@ -348,6 +361,13 @@
 				E54367A12B5A755C00CFBAF7 /* ChooseProject */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		E5B312642BBC3E160055EE57 /* Code correction */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Code correction";
 			sourceTree = "<group>";
 		};
 		E5D7E99C2B7FE07B0018A5CA /* Extensions */ = {
@@ -388,20 +408,19 @@
 			name = diploma;
 			packageProductDependencies = (
 				E5D7E99A2B7FD6020018A5CA /* Files */,
-				E514844B2BA1A60600FB762D /* SwiftBasicFormat */,
-				E514844D2BA1A60600FB762D /* SwiftCompilerPlugin */,
-				E514844F2BA1A60600FB762D /* SwiftCompilerPluginMessageHandling */,
-				E51484512BA1A60600FB762D /* SwiftDiagnostics */,
-				E51484532BA1A60600FB762D /* SwiftIDEUtils */,
-				E51484552BA1A60600FB762D /* SwiftOperators */,
-				E51484572BA1A60600FB762D /* SwiftParser */,
-				E51484592BA1A60600FB762D /* SwiftParserDiagnostics */,
-				E514845B2BA1A60600FB762D /* SwiftRefactor */,
-				E514845D2BA1A60600FB762D /* SwiftSyntax */,
-				E514845F2BA1A60600FB762D /* SwiftSyntaxBuilder */,
-				E51484612BA1A60600FB762D /* SwiftSyntaxMacroExpansion */,
-				E51484632BA1A60600FB762D /* SwiftSyntaxMacros */,
-				E51484652BA1A60600FB762D /* SwiftSyntaxMacrosTestSupport */,
+				E53C26DB2BA434C900C8748B /* SwiftBasicFormat */,
+				E53C26DD2BA434C900C8748B /* SwiftCompilerPlugin */,
+				E53C26DF2BA434C900C8748B /* SwiftCompilerPluginMessageHandling */,
+				E53C26E12BA434C900C8748B /* SwiftDiagnostics */,
+				E53C26E32BA434C900C8748B /* SwiftIDEUtils */,
+				E53C26E52BA434C900C8748B /* SwiftOperators */,
+				E53C26E72BA434C900C8748B /* SwiftParser */,
+				E53C26E92BA434C900C8748B /* SwiftParserDiagnostics */,
+				E53C26EB2BA434C900C8748B /* SwiftRefactor */,
+				E53C26ED2BA434C900C8748B /* SwiftSyntax */,
+				E53C26EF2BA434C900C8748B /* SwiftSyntaxBuilder */,
+				E53C26F82BA4360C00C8748B /* SwiftSyntaxMacroExpansion */,
+				E53C26FA2BA4360C00C8748B /* SwiftSyntaxMacros */,
 			);
 			productName = diploma;
 			productReference = E526A7D92B1E0D31009046E1 /* diploma.app */;
@@ -433,7 +452,7 @@
 			mainGroup = E526A7D02B1E0D31009046E1;
 			packageReferences = (
 				E5D7E9992B7FD6020018A5CA /* XCRemoteSwiftPackageReference "Files" */,
-				E514844A2BA1A60600FB762D /* XCRemoteSwiftPackageReference "swift-syntax" */,
+				E53C26DA2BA434C900C8748B /* XCRemoteSwiftPackageReference "swift-syntax" */,
 			);
 			productRefGroup = E526A7DA2B1E0D31009046E1 /* Products */;
 			projectDirPath = "";
@@ -465,6 +484,7 @@
 				E526A7DD2B1E0D31009046E1 /* diplomaApp.swift in Sources */,
 				E5EBEF442B207A0C00AE13DE /* AppError.swift in Sources */,
 				E54367A32B5A770B00CFBAF7 /* ChooseProjectViewModel.swift in Sources */,
+				E598536D2BA5D84400C3949D /* ReactionUseDevicePowerModeCheck.swift in Sources */,
 				E574AA872B85FC3D00E5EEB2 /* LocationStopCheck.swift in Sources */,
 				E574AA852B85FC0A00E5EEB2 /* LocationAllowBackgroundUpdateCheck.swift in Sources */,
 				E50600AB2B9DD88E00F998D5 /* BluetoothStopScanCheck.swift in Sources */,
@@ -477,12 +497,15 @@
 				E5575F682B836C2F00859A4B /* ProjectErrors.swift in Sources */,
 				E50600AF2B9E1C0600F998D5 /* MotionUpdateIntervalCheck.swift in Sources */,
 				E50600A42B9CC08C00F998D5 /* LocationPausesBackgroundUpdateAutomaticallyCheck.swift in Sources */,
+				E598536B2BA5D6C400C3949D /* TimerToleranceCheck.swift in Sources */,
 				E5EBEF422B206E2000AE13DE /* Project.swift in Sources */,
 				E51484492BA1A40800FB762D /* QoSDispatchQueueGlobalCheck.swift in Sources */,
 				E5D7E9A02B7FE67F0018A5CA /* String++RelativePath.swift in Sources */,
 				E50600A92B9DBD2A00F998D5 /* BluetoothOptionAllowDuplicatesCheck.swift in Sources */,
 				E543679E2B59253600CFBAF7 /* FileTraverser.swift in Sources */,
+				E598536F2BA5D86000C3949D /* NSCacheUsingCheck.swift in Sources */,
 				E5998C1A2B29D4C5001920B2 /* MetricCheck.swift in Sources */,
+				E59853712BA5D8F900C3949D /* CacheURLRequestCachePolicyCheck.swift in Sources */,
 				E5998C1D2B29DE6C001920B2 /* ProjectView.swift in Sources */,
 				E50600AD2B9E18B500F998D5 /* MotionStopUpdatesCheck.swift in Sources */,
 				E5525B242BA077F400E55692 /* BrightnessDarkModeAvaliableInfoPlistCheck.swift in Sources */,
@@ -695,12 +718,11 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		E514844A2BA1A60600FB762D /* XCRemoteSwiftPackageReference "swift-syntax" */ = {
+		E53C26DA2BA434C900C8748B /* XCRemoteSwiftPackageReference "swift-syntax" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apple/swift-syntax.git";
 			requirement = {
-				kind = versionRange;
-				maximumVersion = 511.0.0;
+				kind = upToNextMajorVersion;
 				minimumVersion = 510.0.1;
 			};
 		};
@@ -716,75 +738,70 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		E514844B2BA1A60600FB762D /* SwiftBasicFormat */ = {
+		E53C26DB2BA434C900C8748B /* SwiftBasicFormat */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = E514844A2BA1A60600FB762D /* XCRemoteSwiftPackageReference "swift-syntax" */;
+			package = E53C26DA2BA434C900C8748B /* XCRemoteSwiftPackageReference "swift-syntax" */;
 			productName = SwiftBasicFormat;
 		};
-		E514844D2BA1A60600FB762D /* SwiftCompilerPlugin */ = {
+		E53C26DD2BA434C900C8748B /* SwiftCompilerPlugin */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = E514844A2BA1A60600FB762D /* XCRemoteSwiftPackageReference "swift-syntax" */;
+			package = E53C26DA2BA434C900C8748B /* XCRemoteSwiftPackageReference "swift-syntax" */;
 			productName = SwiftCompilerPlugin;
 		};
-		E514844F2BA1A60600FB762D /* SwiftCompilerPluginMessageHandling */ = {
+		E53C26DF2BA434C900C8748B /* SwiftCompilerPluginMessageHandling */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = E514844A2BA1A60600FB762D /* XCRemoteSwiftPackageReference "swift-syntax" */;
+			package = E53C26DA2BA434C900C8748B /* XCRemoteSwiftPackageReference "swift-syntax" */;
 			productName = SwiftCompilerPluginMessageHandling;
 		};
-		E51484512BA1A60600FB762D /* SwiftDiagnostics */ = {
+		E53C26E12BA434C900C8748B /* SwiftDiagnostics */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = E514844A2BA1A60600FB762D /* XCRemoteSwiftPackageReference "swift-syntax" */;
+			package = E53C26DA2BA434C900C8748B /* XCRemoteSwiftPackageReference "swift-syntax" */;
 			productName = SwiftDiagnostics;
 		};
-		E51484532BA1A60600FB762D /* SwiftIDEUtils */ = {
+		E53C26E32BA434C900C8748B /* SwiftIDEUtils */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = E514844A2BA1A60600FB762D /* XCRemoteSwiftPackageReference "swift-syntax" */;
+			package = E53C26DA2BA434C900C8748B /* XCRemoteSwiftPackageReference "swift-syntax" */;
 			productName = SwiftIDEUtils;
 		};
-		E51484552BA1A60600FB762D /* SwiftOperators */ = {
+		E53C26E52BA434C900C8748B /* SwiftOperators */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = E514844A2BA1A60600FB762D /* XCRemoteSwiftPackageReference "swift-syntax" */;
+			package = E53C26DA2BA434C900C8748B /* XCRemoteSwiftPackageReference "swift-syntax" */;
 			productName = SwiftOperators;
 		};
-		E51484572BA1A60600FB762D /* SwiftParser */ = {
+		E53C26E72BA434C900C8748B /* SwiftParser */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = E514844A2BA1A60600FB762D /* XCRemoteSwiftPackageReference "swift-syntax" */;
+			package = E53C26DA2BA434C900C8748B /* XCRemoteSwiftPackageReference "swift-syntax" */;
 			productName = SwiftParser;
 		};
-		E51484592BA1A60600FB762D /* SwiftParserDiagnostics */ = {
+		E53C26E92BA434C900C8748B /* SwiftParserDiagnostics */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = E514844A2BA1A60600FB762D /* XCRemoteSwiftPackageReference "swift-syntax" */;
+			package = E53C26DA2BA434C900C8748B /* XCRemoteSwiftPackageReference "swift-syntax" */;
 			productName = SwiftParserDiagnostics;
 		};
-		E514845B2BA1A60600FB762D /* SwiftRefactor */ = {
+		E53C26EB2BA434C900C8748B /* SwiftRefactor */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = E514844A2BA1A60600FB762D /* XCRemoteSwiftPackageReference "swift-syntax" */;
+			package = E53C26DA2BA434C900C8748B /* XCRemoteSwiftPackageReference "swift-syntax" */;
 			productName = SwiftRefactor;
 		};
-		E514845D2BA1A60600FB762D /* SwiftSyntax */ = {
+		E53C26ED2BA434C900C8748B /* SwiftSyntax */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = E514844A2BA1A60600FB762D /* XCRemoteSwiftPackageReference "swift-syntax" */;
+			package = E53C26DA2BA434C900C8748B /* XCRemoteSwiftPackageReference "swift-syntax" */;
 			productName = SwiftSyntax;
 		};
-		E514845F2BA1A60600FB762D /* SwiftSyntaxBuilder */ = {
+		E53C26EF2BA434C900C8748B /* SwiftSyntaxBuilder */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = E514844A2BA1A60600FB762D /* XCRemoteSwiftPackageReference "swift-syntax" */;
+			package = E53C26DA2BA434C900C8748B /* XCRemoteSwiftPackageReference "swift-syntax" */;
 			productName = SwiftSyntaxBuilder;
 		};
-		E51484612BA1A60600FB762D /* SwiftSyntaxMacroExpansion */ = {
+		E53C26F82BA4360C00C8748B /* SwiftSyntaxMacroExpansion */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = E514844A2BA1A60600FB762D /* XCRemoteSwiftPackageReference "swift-syntax" */;
+			package = E53C26DA2BA434C900C8748B /* XCRemoteSwiftPackageReference "swift-syntax" */;
 			productName = SwiftSyntaxMacroExpansion;
 		};
-		E51484632BA1A60600FB762D /* SwiftSyntaxMacros */ = {
+		E53C26FA2BA4360C00C8748B /* SwiftSyntaxMacros */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = E514844A2BA1A60600FB762D /* XCRemoteSwiftPackageReference "swift-syntax" */;
+			package = E53C26DA2BA434C900C8748B /* XCRemoteSwiftPackageReference "swift-syntax" */;
 			productName = SwiftSyntaxMacros;
-		};
-		E51484652BA1A60600FB762D /* SwiftSyntaxMacrosTestSupport */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E514844A2BA1A60600FB762D /* XCRemoteSwiftPackageReference "swift-syntax" */;
-			productName = SwiftSyntaxMacrosTestSupport;
 		};
 		E5D7E99A2B7FD6020018A5CA /* Files */ = {
 			isa = XCSwiftPackageProductDependency;
