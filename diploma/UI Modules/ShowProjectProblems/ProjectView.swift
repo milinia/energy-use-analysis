@@ -32,7 +32,7 @@ struct ProjectView: View {
             } detail: {
                 let element = viewModel.contentDictionary[selectedContent ?? UUID()]
                 switch element {
-                case let file as File:
+                case let file as DFile:
                     FileView(file: file, errors: errors?[file.path])
                 default: Image(systemName: "")
                 }

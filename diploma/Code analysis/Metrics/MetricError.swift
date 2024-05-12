@@ -87,10 +87,18 @@ enum RetryDelay: String, MetricError {
     }
 }
 
+enum ComputeTask: String, MetricError {
+    case copmuteTaskInForeground = ""
+    
+    var errorMessage: String {
+        return self.rawValue
+    }
+}
+
 struct MetricErrorData {
     let type: MetricError
     let range: ErrorRange
-    let file: File
+    let file: DFile
 }
 
 struct ErrorRange {

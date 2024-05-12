@@ -13,7 +13,7 @@ struct ContentRowData {
     
     var image: Image {
         switch content {
-        case is File: return Image(systemName: "doc.fill")
+        case is DFile: return Image(systemName: "doc.fill")
         case is DFolder: return Image(systemName: "folder.fill")
         default: return Image(systemName: "questionmark.circle.fill")
         }

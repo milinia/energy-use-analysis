@@ -1,0 +1,24 @@
+import Foundation
+import SwiftTrace
+
+class MyTracer: SwiftTrace.Decorated {
+    
+    let outputFilePath: String =
+    
+    override func onEntry(stack: inout SwiftTrace.EntryStack) {
+        writeToFile(text: entryDecorate(stack: &stack))
+    }
+    
+    
+    override func onExit(stack: inout SwiftTrace.ExitStack) {
+    }
+    
+    func writeToFile(text: String) {
+        if let fileHandle = FileHandle(forWritingAtPath: outputFilePath) {
+            let textWithLine = text + "\n"
+            fileHandle.seekToEndOfFile()
+            fileHandle.write(textWithLine.data(using: .utf8) ?? Data())
+            fileHandle.closeFile()
+        }
+    }
+}

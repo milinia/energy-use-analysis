@@ -18,7 +18,7 @@ class QoSDispatchQueueGlobalCheck: MetricCheck {
         self.regexChecker = regexChecker
     }
     
-    func check(file: File) -> [MetricErrorData] {
+    func check(file: DFile) -> [MetricErrorData] {
         var errors:[MetricErrorData] = []
         let fileText = String(data: file.data, encoding: .utf8) ?? ""
         let dispatchQueueGlobalUsage = regexChecker.checkTextRegex(pattern: dispatchQueueRegexPattern, text: fileText)

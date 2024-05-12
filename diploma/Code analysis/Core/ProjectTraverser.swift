@@ -13,10 +13,10 @@ protocol ProjectTraverser {
 
 class ProjectTraverserImpl: ProjectTraverser {
     
-    private var checkedFiles: [File] = []
+    private var checkedFiles: [DFile] = []
     let errors: Dictionary<String, [MetricErrorData]> = [:]
     
-    func traverse(files: [File]) -> Dictionary<String, [MetricErrorData]> {
+    func traverse(files: [DFile]) -> Dictionary<String, [MetricErrorData]> {
         checkedFiles = files
         let fileTraverser = FileTraverser()
         while !(checkedFiles.isEmpty) {

@@ -9,26 +9,21 @@ import Foundation
 import Files
 
 protocol ProjectReader {
-    func readProject(projectPath: URL) throws -> (Project, [File])
+    func readProject(projectPath: URL) throws -> (Project, [DFile])
 }
 
 class ProjectReaderImpl: ProjectReader {
     
-    private let fileManager: FileManager
-    private var projectFiles: [File] = []
+    private var projectFiles: [DFile] = []
     
-    init(fileManager: FileManager) {
-        self.fileManager = fileManager
-    }
-    
-    func readProject(projectPath: URL) throws -> (Project, [File]) {
+    func readProject(projectPath: URL) throws -> (Project, [DFile]) {
         do {
             let files = try Folder(path: projectPath.path()).files
             let folders = try Folder(path: projectPath.path()).subfolders
             var projectContent: [Content] = []
             for file in files {
                 let fileContent = try file.read()
-                let projectFile = File(path: file.path, type: .swift, data: fileContent)
+                let projectFile = DFile(path: file.path, type: .swift, data: fileContent)
                 projectFiles.append(projectFile)
                 projectContent.append(projectFile)
             }
@@ -50,7 +45,7 @@ class ProjectReaderImpl: ProjectReader {
             var folderContent: [Content] = []
             for file in files {
                 let fileContent = try file.read()
-                let projectFile = File(path: file.path, type: .swift, data: fileContent)
+                let projectFile = DFile(path: file.path, type: .swift, data: fileContent)
                 projectFiles.append(projectFile)
                 folderContent.append(projectFile)
             }
@@ -62,10 +57,5 @@ class ProjectReaderImpl: ProjectReader {
         } catch {
             throw AppError.noSuchFolder
         }
-    }
-    
-    private func isFolder(path: String) -> Bool {
-        var isDirectory: ObjCBool = true
-        return fileManager.fileExists(atPath: path, isDirectory: &isDirectory) && isDirectory.boolValue
     }
 }

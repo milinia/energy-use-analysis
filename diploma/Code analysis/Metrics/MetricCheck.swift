@@ -8,11 +8,11 @@
 import Foundation
 
 protocol RegexCheck {
-    func checkForPattern(file: File, regexPattern: String, error: MetricError) -> [MetricErrorData]
+    func checkForPattern(file: DFile, regexPattern: String, error: MetricError) -> [MetricErrorData]
 }
 
 protocol MetricCheck {
-    func check(file: File) -> [MetricErrorData]
+    func check(file: DFile) -> [MetricErrorData]
 }
 
 class BaseRegexChecker: RegexCheck {
@@ -23,7 +23,7 @@ class BaseRegexChecker: RegexCheck {
         self.regexChecher = regexChecher
     }
     
-    func checkForPattern(file: File, regexPattern: String, error: MetricError) -> [MetricErrorData] {
+    func checkForPattern(file: DFile, regexPattern: String, error: MetricError) -> [MetricErrorData] {
         if let text = String(data: file.data, encoding: .utf8) {
             let errorLines = regexChecher.checkTextRegex(pattern: regexPattern, text: text)
             var errors: [MetricErrorData]  = []

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FileView: View {
-    let file: File?
+    let file: DFile?
     let errors: [MetricErrorData]?
     
     var body: some View {

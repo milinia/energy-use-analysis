@@ -61,13 +61,15 @@ class DFolder: Content {
     }
 }
 
-class File: Content {
+class DFile: Content {
     let type: FileType
     let data: Data
+    var lines: [String]
     
     init(path: String, type: FileType, data: Data) {
         self.type = type
         self.data = data
+        self.lines = String(data: data, encoding: .utf8)?.components(separatedBy: .newlines) ?? []
         super.init(path: path)
     }
     

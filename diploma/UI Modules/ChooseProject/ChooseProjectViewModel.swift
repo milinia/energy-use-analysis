@@ -10,7 +10,7 @@ import SwiftUI
 
 final class ChooseProjectViewModel: ObservableObject {
     
-    private let projectReader = ProjectReaderImpl(fileManager: FileManager())
+    private let projectReader = ProjectReaderImpl()
     
     func readProject(path: URL) {
         do {
@@ -20,6 +20,8 @@ final class ChooseProjectViewModel: ObservableObject {
             let projectTraverser = ProjectTraverserImpl()
             let errors = projectTraverser.traverse(files: files)
 //            let projectErrors = ProjectErrors(errors: errors, project: project)
+            let codeGeneration = CodeGeneration()
+            codeGeneration.generate(project: project)
         } catch {
             
         }

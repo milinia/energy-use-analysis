@@ -26,7 +26,7 @@ struct ContentRow: View {
 
 struct ContentRowFile_Previews: PreviewProvider {
     static var previews: some View {
-        ContentRow(contentData: ContentRowData(content: File(path: "Downloads/Class.swift", type: .swift, data: Data()), isHasError: true))
+        ContentRow(contentData: ContentRowData(content: DFile(path: "Downloads/Class.swift", type: .swift, data: Data()), isHasError: true))
     }
 }
 

@@ -10,7 +10,7 @@ import SwiftParser
 
 final class FileTraverser {
 
-    func traverseFile(file: File) -> SourceFileSyntax? {
+    func traverseFile(file: DFile) -> SourceFileSyntax? {
         guard let fileContent = String(data: file.data, encoding: .utf8) else {return nil}
         let syntaxTree = Parser.parse(source: fileContent)
 //        let syntaxVisitor = NodesTraverser(viewMode: .fixedUp)

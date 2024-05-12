@@ -15,7 +15,7 @@ class LocationStopCheck: MetricCheck {
         self.regexChecker = regexChecker
     }
     
-    func check(file: File) -> [MetricErrorData] {
+    func check(file: DFile) -> [MetricErrorData] {
         return regexChecker.checkForPattern(file: file, regexPattern: regexPattern, error: Location.unstoppableWork)
     }
 }
