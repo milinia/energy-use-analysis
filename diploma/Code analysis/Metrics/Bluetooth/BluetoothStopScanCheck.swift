@@ -17,6 +17,9 @@ class BluetoothStopScanCheck: MetricCheck {
     }
     
     func check(file: DFile) -> [MetricErrorData] {
-        return regexChecker.checkForPattern(file: file, regexPattern: regexPattern, error: Bluetooth.unstoppableWork)
+        if !regexChecker.checkForPattern(file: file, regexPattern: regexPattern) {
+            return [MetricErrorData(type: Bluetooth.unstoppableWork, range: ErrorRange(start: 0, end: 0), file: file, canFixError: false)]
+        }
+        return []
     }
 }

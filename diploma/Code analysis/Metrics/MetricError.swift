@@ -13,7 +13,6 @@ protocol MetricError {
 
 enum Location: String, MetricError {
     case highAccuracy = "High location accuracy is selected"
-    case activityType = "Activity type"
     case allowBackgroundWork = "Getting a location works in the background"
     case pauseUpdatesAutomatically = "Prevents the system from updates if they are not needed"
     case unstoppableWork  = ""
@@ -64,7 +63,7 @@ enum Reaction: String, MetricError {
         return self.rawValue
     }
 }
-enum Cashing: String, MetricError {
+enum CacheError: String, MetricError {
     case cashingImages = "Images should be cashed"
     case cashingRequests = ""
     
@@ -74,13 +73,6 @@ enum Cashing: String, MetricError {
 }
 enum QualityOfService: String, MetricError {
     case qosForTask = ""
-    
-    var errorMessage: String {
-        return self.rawValue
-    }
-}
-enum RetryDelay: String, MetricError {
-    case retryDelayForRequest = ""
     
     var errorMessage: String {
         return self.rawValue
@@ -99,6 +91,7 @@ struct MetricErrorData {
     let type: MetricError
     let range: ErrorRange
     let file: DFile
+    let canFixError: Bool
 }
 
 struct ErrorRange {

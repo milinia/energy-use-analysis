@@ -11,64 +11,54 @@ import SwiftParser
 
 class ErrorCorrector {
     
+    var delegates: Dictionary<String, [String]> = [:]
+    var classes: Dictionary<String, (DFile, ClassInfo)> = [:]
+    
+    init(delegates: Dictionary<String, [String]>, classes: Dictionary<String, (DFile, ClassInfo)>) {
+        self.delegates = delegates
+        self.classes = classes
+    }
+    
     func correctErrors(errors: [MetricErrorData], project: Project) {
         for error in errors {
             correctError(error: error)
         }
     }
     
-    func findClass(with name: String, project: Project) -> DFile? { //Core Motion, Bluetooth, Location используют систему делегатов
-        var contents = project.content
-        while(!contents.isEmpty) {
-            guard let content = contents.first else {return nil}
-            switch content {
-            case let dfile as DFile:
-                let name = dfile.path.relativePath ?? ""
-                if dfile.path.hasSuffix(".swift") {
-                    guard let fileContent = String(data: dfile.data, encoding: .utf8) else {return nil}
-                    let syntaxTree = Parser.parse(source: fileContent)
-                    let syntaxVisitor = ClassFindVisitor(viewMode: .fixedUp)
-                    syntaxVisitor.className = name
-                    syntaxVisitor.walk(syntaxTree)
-                    if syntaxVisitor.isClassFinded {
-                        return dfile
-                    }
-                }
-            case let dfolder as DFolder:
-                contents.append(contentsOf: dfolder.сontent)
-            default:
-                break
-            }
-        }
-        return nil
-    }
-    
     func correctError(error: MetricErrorData) {
         switch error.type {
-        case is Location: break
+        case is Location:
+            if let delegates = delegates["Core Location"] {
+                if let className = delegates.first {
+                    if let info = classes[className] {
+                        
+                    }
+                }
+            }
         case is TimerError: break
-        case is Bluetooth: break
-        case is Motion: break
+        case is Bluetooth:
+            if let delegates = delegates["Core Bluetooth"] {
+                if let className = delegates.first {
+                    if let info = classes[className] {
+                        
+                    }
+                }
+            }
+        case is Motion:
+            if let delegates = delegates["Core Motion"] {
+                if let className = delegates.first {
+                    if let info = classes[className] {
+                        
+                    }
+                }
+            }
         case is Brightness: break
         case is Reaction: break
-        case is Cashing: break
+        case is CacheError: break
         case is QualityOfService: break
         case is RetryDelay: break
         case is ComputeTask: break
         default: break
         }
-    }
-}
-
-class ClassFindVisitor: SyntaxVisitor {
-    var isClassFinded: Bool = false
-    var file: DFile?
-    var className: String = ""
-    
-    override func visit(_ node: ClassDeclSyntax) -> SyntaxVisitorContinueKind {
-        if node.name.text == className {
-            isClassFinded = true
-        }
-        return .visitChildren
     }
 }

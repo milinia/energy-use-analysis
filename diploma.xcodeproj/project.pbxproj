@@ -20,6 +20,11 @@
 		E5208B262BDCF5F700B35642 /* FileSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5208B252BDCF5F700B35642 /* FileSaver.swift */; };
 		E5208B282BE4DC1A00B35642 /* SaveData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5208B272BE4DC1A00B35642 /* SaveData.swift */; };
 		E5208B3D2BEFED8A00B35642 /* Tracer.txt in Resources */ = {isa = PBXBuildFile; fileRef = E5208B3C2BEFED8A00B35642 /* Tracer.txt */; };
+		E5208B472BF27D4700B35642 /* FunctionCallData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5208B462BF27D4700B35642 /* FunctionCallData.swift */; };
+		E5208B4B2BF4BC5200B35642 /* BaseRegexChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5208B4A2BF4BC5200B35642 /* BaseRegexChecker.swift */; };
+		E5208B4D2BF77FDB00B35642 /* DelegateCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5208B4C2BF77FDB00B35642 /* DelegateCheck.swift */; };
+		E5208B4F2BF8A16500B35642 /* Warning.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5208B4E2BF8A16500B35642 /* Warning.swift */; };
+		E5208B532BFB44C600B35642 /* ClassWalker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5208B522BFB44C600B35642 /* ClassWalker.swift */; };
 		E526A7DD2B1E0D31009046E1 /* diplomaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E526A7DC2B1E0D31009046E1 /* diplomaApp.swift */; };
 		E526A7DF2B1E0D31009046E1 /* ChooseProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E526A7DE2B1E0D31009046E1 /* ChooseProjectView.swift */; };
 		E526A7E12B1E0D36009046E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E526A7E02B1E0D36009046E1 /* Assets.xcassets */; };
@@ -47,7 +52,6 @@
 		E555350B2B32D74100217131 /* ContentRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E555350A2B32D74100217131 /* ContentRow.swift */; };
 		E55535152B32F56200217131 /* ContentRowData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55535142B32F56200217131 /* ContentRowData.swift */; };
 		E5575F642B81364600859A4B /* ProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5575F632B81364600859A4B /* ProjectViewModel.swift */; };
-		E5575F682B836C2F00859A4B /* ProjectErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5575F672B836C2F00859A4B /* ProjectErrors.swift */; };
 		E574AA832B85FA4100E5EEB2 /* LocationAccuracyCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = E574AA822B85FA4100E5EEB2 /* LocationAccuracyCheck.swift */; };
 		E574AA852B85FC0A00E5EEB2 /* LocationAllowBackgroundUpdateCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = E574AA842B85FC0A00E5EEB2 /* LocationAllowBackgroundUpdateCheck.swift */; };
 		E574AA872B85FC3D00E5EEB2 /* LocationStopCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = E574AA862B85FC3D00E5EEB2 /* LocationStopCheck.swift */; };
@@ -65,9 +69,8 @@
 		E5B312722BBD523C0055EE57 /* BluetoothErrorCorrector.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B312712BBD523C0055EE57 /* BluetoothErrorCorrector.swift */; };
 		E5B312742BBD52A70055EE57 /* ReactionErrorCorrector.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B312732BBD52A70055EE57 /* ReactionErrorCorrector.swift */; };
 		E5B312762BBD52FE0055EE57 /* BrightnessErrorCorrector.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B312752BBD52FE0055EE57 /* BrightnessErrorCorrector.swift */; };
-		E5B312782BBD536E0055EE57 /* CashingErrorCorrector.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B312772BBD536E0055EE57 /* CashingErrorCorrector.swift */; };
+		E5B312782BBD536E0055EE57 /* CacheErrorCorrector.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B312772BBD536E0055EE57 /* CacheErrorCorrector.swift */; };
 		E5B3127A2BBD54590055EE57 /* QualityOfServiceErrorCorrector.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B312792BBD54590055EE57 /* QualityOfServiceErrorCorrector.swift */; };
-		E5B3127C2BBD54EC0055EE57 /* RetryDelayErrorCorrector.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B3127B2BBD54EC0055EE57 /* RetryDelayErrorCorrector.swift */; };
 		E5B3127E2BBD550C0055EE57 /* ComputeTaskErrorCorrector.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B3127D2BBD550C0055EE57 /* ComputeTaskErrorCorrector.swift */; };
 		E5D7E99B2B7FD6020018A5CA /* Files in Frameworks */ = {isa = PBXBuildFile; productRef = E5D7E99A2B7FD6020018A5CA /* Files */; };
 		E5D7E9A02B7FE67F0018A5CA /* String++RelativePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7E99F2B7FE67F0018A5CA /* String++RelativePath.swift */; };
@@ -105,6 +108,11 @@
 		E5208B252BDCF5F700B35642 /* FileSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSaver.swift; sourceTree = "<group>"; };
 		E5208B272BE4DC1A00B35642 /* SaveData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveData.swift; sourceTree = "<group>"; };
 		E5208B3C2BEFED8A00B35642 /* Tracer.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Tracer.txt; sourceTree = "<group>"; };
+		E5208B462BF27D4700B35642 /* FunctionCallData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionCallData.swift; sourceTree = "<group>"; };
+		E5208B4A2BF4BC5200B35642 /* BaseRegexChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRegexChecker.swift; sourceTree = "<group>"; };
+		E5208B4C2BF77FDB00B35642 /* DelegateCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegateCheck.swift; sourceTree = "<group>"; };
+		E5208B4E2BF8A16500B35642 /* Warning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Warning.swift; sourceTree = "<group>"; };
+		E5208B522BFB44C600B35642 /* ClassWalker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassWalker.swift; sourceTree = "<group>"; };
 		E526A7D92B1E0D31009046E1 /* diploma.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = diploma.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E526A7DC2B1E0D31009046E1 /* diplomaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = diplomaApp.swift; sourceTree = "<group>"; };
 		E526A7DE2B1E0D31009046E1 /* ChooseProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseProjectView.swift; sourceTree = "<group>"; };
@@ -123,7 +131,6 @@
 		E555350A2B32D74100217131 /* ContentRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentRow.swift; sourceTree = "<group>"; };
 		E55535142B32F56200217131 /* ContentRowData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentRowData.swift; sourceTree = "<group>"; };
 		E5575F632B81364600859A4B /* ProjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewModel.swift; sourceTree = "<group>"; };
-		E5575F672B836C2F00859A4B /* ProjectErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectErrors.swift; sourceTree = "<group>"; };
 		E574AA822B85FA4100E5EEB2 /* LocationAccuracyCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAccuracyCheck.swift; sourceTree = "<group>"; };
 		E574AA842B85FC0A00E5EEB2 /* LocationAllowBackgroundUpdateCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAllowBackgroundUpdateCheck.swift; sourceTree = "<group>"; };
 		E574AA862B85FC3D00E5EEB2 /* LocationStopCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationStopCheck.swift; sourceTree = "<group>"; };
@@ -141,9 +148,8 @@
 		E5B312712BBD523C0055EE57 /* BluetoothErrorCorrector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothErrorCorrector.swift; sourceTree = "<group>"; };
 		E5B312732BBD52A70055EE57 /* ReactionErrorCorrector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionErrorCorrector.swift; sourceTree = "<group>"; };
 		E5B312752BBD52FE0055EE57 /* BrightnessErrorCorrector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrightnessErrorCorrector.swift; sourceTree = "<group>"; };
-		E5B312772BBD536E0055EE57 /* CashingErrorCorrector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashingErrorCorrector.swift; sourceTree = "<group>"; };
+		E5B312772BBD536E0055EE57 /* CacheErrorCorrector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheErrorCorrector.swift; sourceTree = "<group>"; };
 		E5B312792BBD54590055EE57 /* QualityOfServiceErrorCorrector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QualityOfServiceErrorCorrector.swift; sourceTree = "<group>"; };
-		E5B3127B2BBD54EC0055EE57 /* RetryDelayErrorCorrector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetryDelayErrorCorrector.swift; sourceTree = "<group>"; };
 		E5B3127D2BBD550C0055EE57 /* ComputeTaskErrorCorrector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComputeTaskErrorCorrector.swift; sourceTree = "<group>"; };
 		E5D7E99F2B7FE67F0018A5CA /* String++RelativePath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String++RelativePath.swift"; sourceTree = "<group>"; };
 		E5DF10A82B970E74002BB05F /* MetricError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricError.swift; sourceTree = "<group>"; };
@@ -267,6 +273,9 @@
 				E5998C192B29D4C5001920B2 /* MetricCheck.swift */,
 				E5DF10AC2B975B09002BB05F /* RegexChecker.swift */,
 				E5DF10A82B970E74002BB05F /* MetricError.swift */,
+				E5208B4A2BF4BC5200B35642 /* BaseRegexChecker.swift */,
+				E5208B4C2BF77FDB00B35642 /* DelegateCheck.swift */,
+				E5208B522BFB44C600B35642 /* ClassWalker.swift */,
 				E59853692BA5D61400C3949D /* Compute Tasks */,
 				E59853652BA5D5D800C3949D /* Caching */,
 				E59853642BA5D5D200C3949D /* Timer */,
@@ -432,9 +441,8 @@
 				E5B312712BBD523C0055EE57 /* BluetoothErrorCorrector.swift */,
 				E5B312732BBD52A70055EE57 /* ReactionErrorCorrector.swift */,
 				E5B312752BBD52FE0055EE57 /* BrightnessErrorCorrector.swift */,
-				E5B312772BBD536E0055EE57 /* CashingErrorCorrector.swift */,
+				E5B312772BBD536E0055EE57 /* CacheErrorCorrector.swift */,
 				E5B312792BBD54590055EE57 /* QualityOfServiceErrorCorrector.swift */,
-				E5B3127B2BBD54EC0055EE57 /* RetryDelayErrorCorrector.swift */,
 				E5B3127D2BBD550C0055EE57 /* ComputeTaskErrorCorrector.swift */,
 			);
 			path = Correction;
@@ -454,7 +462,8 @@
 				E5EBEF412B206E2000AE13DE /* Project.swift */,
 				E5EBEF432B207A0C00AE13DE /* AppError.swift */,
 				E55535142B32F56200217131 /* ContentRowData.swift */,
-				E5575F672B836C2F00859A4B /* ProjectErrors.swift */,
+				E5208B462BF27D4700B35642 /* FunctionCallData.swift */,
+				E5208B4E2BF8A16500B35642 /* Warning.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -560,6 +569,7 @@
 				E5B312762BBD52FE0055EE57 /* BrightnessErrorCorrector.swift in Sources */,
 				E5B312742BBD52A70055EE57 /* ReactionErrorCorrector.swift in Sources */,
 				E54367A32B5A770B00CFBAF7 /* ChooseProjectViewModel.swift in Sources */,
+				E5208B532BFB44C600B35642 /* ClassWalker.swift in Sources */,
 				E5B3127A2BBD54590055EE57 /* QualityOfServiceErrorCorrector.swift in Sources */,
 				E598536D2BA5D84400C3949D /* ReactionUseDevicePowerModeCheck.swift in Sources */,
 				E574AA872B85FC3D00E5EEB2 /* LocationStopCheck.swift in Sources */,
@@ -573,19 +583,21 @@
 				E5575F642B81364600859A4B /* ProjectViewModel.swift in Sources */,
 				E555350B2B32D74100217131 /* ContentRow.swift in Sources */,
 				E5DF10A92B970E74002BB05F /* MetricError.swift in Sources */,
-				E5575F682B836C2F00859A4B /* ProjectErrors.swift in Sources */,
+				E5208B4D2BF77FDB00B35642 /* DelegateCheck.swift in Sources */,
 				E5208B262BDCF5F700B35642 /* FileSaver.swift in Sources */,
 				E50600AF2B9E1C0600F998D5 /* MotionUpdateIntervalCheck.swift in Sources */,
 				E50600A42B9CC08C00F998D5 /* LocationPausesBackgroundUpdateAutomaticallyCheck.swift in Sources */,
-				E5B3127C2BBD54EC0055EE57 /* RetryDelayErrorCorrector.swift in Sources */,
 				E598536B2BA5D6C400C3949D /* TimerToleranceCheck.swift in Sources */,
 				E5EBEF422B206E2000AE13DE /* Project.swift in Sources */,
-				E5B312782BBD536E0055EE57 /* CashingErrorCorrector.swift in Sources */,
+				E5B312782BBD536E0055EE57 /* CacheErrorCorrector.swift in Sources */,
 				E51484492BA1A40800FB762D /* QoSDispatchQueueGlobalCheck.swift in Sources */,
 				E5B312672BBC76480055EE57 /* ErrorCorrector.swift in Sources */,
 				E5B3126C2BBD4E020055EE57 /* Corrector.swift in Sources */,
 				E5D7E9A02B7FE67F0018A5CA /* String++RelativePath.swift in Sources */,
+				E5208B4B2BF4BC5200B35642 /* BaseRegexChecker.swift in Sources */,
+				E5208B472BF27D4700B35642 /* FunctionCallData.swift in Sources */,
 				E50600A92B9DBD2A00F998D5 /* BluetoothOptionAllowDuplicatesCheck.swift in Sources */,
+				E5208B4F2BF8A16500B35642 /* Warning.swift in Sources */,
 				E5B3126A2BBD4DDD0055EE57 /* LocationErrorCorrector.swift in Sources */,
 				E543679E2B59253600CFBAF7 /* FileTraverser.swift in Sources */,
 				E5B3127E2BBD550C0055EE57 /* ComputeTaskErrorCorrector.swift in Sources */,

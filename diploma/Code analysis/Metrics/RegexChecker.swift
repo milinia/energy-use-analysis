@@ -10,6 +10,7 @@ import Foundation
 protocol RegexChecker {
     func checkTextRegex(pattern: String, text: String) -> [Int]
     func checkStringRegex(pattern: String, string: String) -> Bool
+    func checkStringRegexRange(pattern: String, string: String) -> NSRange?
 }
 
 final class RegexCheckerImpl: RegexChecker {
@@ -29,7 +30,7 @@ final class RegexCheckerImpl: RegexChecker {
         do {
             let range = NSRange(location: 0, length: string.utf8.count)
             let regex = try NSRegularExpression(pattern: pattern)
-            if let match = regex.firstMatch(in: string, range: range) {
+            if regex.firstMatch(in: string, range: range) != nil {
                 return true
             } else {
                 return false
@@ -38,5 +39,20 @@ final class RegexCheckerImpl: RegexChecker {
             
         }
         return false
+    }
+    
+    func checkStringRegexRange(pattern: String, string: String) -> NSRange? {
+        do {
+            let range = NSRange(location: 0, length: string.utf8.count)
+            let regex = try NSRegularExpression(pattern: pattern)
+            if let match = regex.firstMatch(in: string, range: range) {
+                return match.range
+            } else {
+                return nil
+            }
+        } catch {
+            
+        }
+        return nil
     }
 }

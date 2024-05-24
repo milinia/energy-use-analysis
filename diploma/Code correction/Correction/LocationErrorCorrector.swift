@@ -9,20 +9,28 @@ import Foundation
 
 class LocationErrorCorrector: Corrector {
     
+    let file: DFile
+    let classInfo: ClassInfo
+    let regexChecker: RegexChecker
+    
+    init(file: DFile, classInfo: ClassInfo, regexChecker: RegexChecker) {
+        self.file = file
+        self.classInfo = classInfo
+        self.regexChecker = regexChecker
+    }
+    
     func correct(error: MetricErrorData) -> MetricErrorData {
         switch error.type {
         case let locationError as Location:
             switch locationError {
             case .highAccuracy:
-                break
-            case .activityType:
-                break
+                correctHighAccuracyError(error: error)
             case .allowBackgroundWork:
-                break
+                correctAllowBackgroundWorkError(error: error)
             case .pauseUpdatesAutomatically:
-                break
+                correctPauseUpdatesAutomaticallyError(error: error)
             case .unstoppableWork:
-                break
+                correctUnstoppableWorkError(error: error)
             }
         default: break
         }
@@ -30,23 +38,36 @@ class LocationErrorCorrector: Corrector {
     }
     
     private func correctHighAccuracyError(error: MetricErrorData) {
-        let line = error.file.lines[error.range.start]
-        
+        let lines = Array(file.lines[classInfo.startLine...classInfo.endLine])
+        for i in 0...lines.count - 1 {
+            if regexChecker.checkStringRegex(pattern: ".desiredAccuracy = [kCLLocationAccuracyBestForNavigation|kCLLocationAccuracyBest]+", string: lines[i]) {
+                file.lines[classInfo.startLine + i] = file.lines[classInfo.startLine + i]
+                    .replacingOccurrences(of: "kCLLocationAccuracyBestForNavigation", with: "kCLLocationAccuracyNearestTenMeters")
+                    .replacingOccurrences(of: "kCLLocationAccuracyBest", with: "kCLLocationAccuracyNearestTenMeters")
+            }
+        }
     }
-    
-    private func correctActivityTypeError(error: MetricErrorData) {
-        let line = error.file.lines[error.range.start]
-    }
+
     
     private func correctAllowBackgroundWorkError(error: MetricErrorData) {
-        let line = error.file.lines[error.range.start]
+        let lines = Array(file.lines[classInfo.startLine...classInfo.endLine])
+        for i in 0...lines.count - 1 {
+            if regexChecker.checkStringRegex(pattern: ".allowsBackgroundLocationUpdates = true", string: lines[i]) {
+                file.lines[classInfo.startLine + i] = file.lines[classInfo.startLine + i].replacingOccurrences(of: "true", with: "false")
+            }
+        }
     }
     
     private func correctPauseUpdatesAutomaticallyError(error: MetricErrorData) {
-        let line = error.file.lines[error.range.start]
+        let lines = Array(file.lines[classInfo.startLine...classInfo.endLine])
+        for i in 0...lines.count - 1 {
+            if regexChecker.checkStringRegex(pattern: ".pausesLocationUpdatesAutomatically = false", string: lines[i]) {
+                file.lines[classInfo.startLine + i] = file.lines[classInfo.startLine + i].replacingOccurrences(of: "false", with: "true")
+            }
+        }
     }
     
     private func correctUnstoppableWorkError(error: MetricErrorData) {
-        let line = error.file.lines[error.range.start]
+        // нет исправления
     }
 }

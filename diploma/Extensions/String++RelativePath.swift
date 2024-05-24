@@ -15,4 +15,15 @@ extension String {
         }
         return components.last
     }
+    var spaceFromLineStart: Int {
+        var count = 0
+        for char in self {
+            if char == " " {
+                count += 1
+            } else {
+                break
+            }
+        }
+        return count
+    }
 }

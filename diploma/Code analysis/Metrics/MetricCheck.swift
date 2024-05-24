@@ -6,33 +6,73 @@
 //
 
 import Foundation
-
-protocol RegexCheck {
-    func checkForPattern(file: DFile, regexPattern: String, error: MetricError) -> [MetricErrorData]
-}
+import SwiftParser
+import SwiftSyntax
 
 protocol MetricCheck {
     func check(file: DFile) -> [MetricErrorData]
 }
 
-class BaseRegexChecker: RegexCheck {
+class MetricChecker {
     
-    let regexChecher: RegexChecker
+    var errors: [MetricErrorData] = []
+    var delegates: Dictionary<String, [String]> = [:]
+    var classes: Dictionary<String, (DFile, ClassInfo)> = [:]
+    let regexChecker: RegexChecker = RegexCheckerImpl()
     
-    init(regexChecher: RegexChecker) {
-        self.regexChecher = regexChecher
+    func checkFile(file: DFile) -> [MetricErrorData] {
+        guard let fileContent = String(data: file.data, encoding: .utf8) else {return []}
+        let syntaxTree = Parser.parse(source: fileContent)
+        checkCacheMetric(file: file, tree: syntaxTree)
+        checkTimerMetric(file: file, tree: syntaxTree)
+        checkQoSMetric(file: file, tree: syntaxTree)
+        findDelegates(file: file)
+        return errors
     }
     
-    func checkForPattern(file: DFile, regexPattern: String, error: MetricError) -> [MetricErrorData] {
-        if let text = String(data: file.data, encoding: .utf8) {
-            let errorLines = regexChecher.checkTextRegex(pattern: regexPattern, text: text)
-            var errors: [MetricErrorData]  = []
-            for errorLine in errorLines {
-                errors.append(MetricErrorData(type: error, range: ErrorRange(start: errorLine, end: errorLine), file: file))
+    func checkTimerMetric(file: DFile, tree: SourceFileSyntax) {
+        let syntaxVisitor = TimerToleranceCheck(viewMode: .fixedUp)
+        syntaxVisitor.file = file
+        syntaxVisitor.walk(tree)
+        syntaxVisitor.timerVariableNames.forEach { (key, value) in
+            if value.0 == false {
+                errors.append(MetricErrorData(type: TimerError.timerTolerace,
+                                              range: ErrorRange(start: value.1.start, end: value.1.end),
+                                              file: file, canFixError: true))
             }
-            return errors
-        } else {
-            return []
         }
     }
+    
+    func checkCacheMetric(file: DFile, tree: SourceFileSyntax) {
+        let syntaxVisitor = CacheURLRequestCachePolicyCheck(viewMode: .fixedUp)
+        syntaxVisitor.file = file
+        syntaxVisitor.walk(tree)
+        syntaxVisitor.urlRequestVariableNames.forEach { (key, value) in
+            if value.0 == false {
+                errors.append(MetricErrorData(type: CacheError.cashingRequests,
+                                              range: ErrorRange(start: value.1.start, end: value.1.end),
+                                              file: file, canFixError: true))
+            }
+        }
+    }
+    
+    func checkQoSMetric(file: DFile, tree: SourceFileSyntax) {
+        let check = QoSDispatchQueueGlobalCheck(regexChecker: regexChecker)
+        check.check(file: file).map({errors.append($0)})
+    }
+    
+    func walkAllProjectClasses(file: DFile, tree: SourceFileSyntax) {
+        let syntaxVisitor = ClassWalker(viewMode: .fixedUp)
+        syntaxVisitor.fileName = file.path.relativePath ?? ""
+        syntaxVisitor.walk(tree)
+        syntaxVisitor.classNames.forEach { classInfo in
+            classes[classInfo.name] = (file, classInfo)
+        }
+    }
+    
+    func findDelegates(file: DFile) {
+        let delegateCheck = DelegateCheck(regexChecker: regexChecker)
+        delegateCheck.check(file: file, dict: &delegates)
+    }
 }
+

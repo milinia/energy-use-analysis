@@ -10,12 +10,12 @@ final class SaveData {
     static var projectPath: String =
 
     static func writeToFile(file: FileName, text: String) {
-        let rootFolder = projectPath + "Test"
-        let path = rootFolder + "/" + file.rawValue
-        do {
-            try text.write(toFile: path, atomically: true, encoding: .utf8)
-        } catch {
-            
+        let path = projectPath + file.rawValue
+        if let fileHandle = FileHandle(forWritingAtPath: path) {
+            let textWithLine = text + "\n"
+            fileHandle.seekToEndOfFile()
+            fileHandle.write(textWithLine.data(using: .utf8) ?? Data())
+            fileHandle.closeFile()
         }
     }
 }
