@@ -1,12 +1,30 @@
 {
   "pins" : [
     {
+      "identity" : "axistooltip",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/jasudev/AxisTooltip",
+      "state" : {
+        "revision" : "ed9f7acbbd54dc3ab70585c0cd006974b532e998",
+        "version" : "0.5.0"
+      }
+    },
+    {
       "identity" : "files",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/JohnSundell/Files",
       "state" : {
         "revision" : "d273b5b7025d386feef79ef6bad7de762e106eaf",
         "version" : "4.2.0"
+      }
+    },
+    {
+      "identity" : "splash",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/JohnSundell/Splash",
+      "state" : {
+        "revision" : "7f4df436eb78fe64fe2c32c58006e9949fa28ad8",
+        "version" : "0.16.0"
       }
     },
     {

@@ -17,7 +17,8 @@ class MetricChecker {
     
     var errors: [MetricErrorData] = []
     var delegates: Dictionary<String, [String]> = [:]
-    var classes: Dictionary<String, (DFile, ClassInfo)> = [:]
+    var classes: Dictionary<String, ClassInfo> = [:]
+    var protocols: Dictionary<String, ProtocolInfo> = [:]
     let regexChecker: RegexChecker = RegexCheckerImpl()
     
     func checkFile(file: DFile) -> [MetricErrorData] {
@@ -61,12 +62,15 @@ class MetricChecker {
         check.check(file: file).map({errors.append($0)})
     }
     
-    func walkAllProjectClasses(file: DFile, tree: SourceFileSyntax) {
+    func walkAllProjectClassesAndProtocols(file: DFile, tree: SourceFileSyntax) {
         let syntaxVisitor = ClassWalker(viewMode: .fixedUp)
-        syntaxVisitor.fileName = file.path.relativePath ?? ""
+        syntaxVisitor.file = file
         syntaxVisitor.walk(tree)
         syntaxVisitor.classNames.forEach { classInfo in
-            classes[classInfo.name] = (file, classInfo)
+            classes[classInfo.name] = classInfo
+        }
+        syntaxVisitor.protocolNames.forEach { protocolInfo in
+            protocols[protocolInfo.name] = protocolInfo
         }
     }
     

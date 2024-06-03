@@ -10,3 +10,7 @@ import Foundation
 final class ProjectViewModel: ObservableObject {
     var contentDictionary: Dictionary<UUID, Content> = [:]
 }
+
+final class FileViewModel: ObservableObject {
+    
+}

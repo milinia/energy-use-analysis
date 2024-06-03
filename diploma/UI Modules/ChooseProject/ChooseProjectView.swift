@@ -8,39 +8,42 @@
 import SwiftUI
 
 struct ChooseProjectView: View {
-    @Environment(\.openWindow) private var openWindow
     @StateObject var viewModel = ChooseProjectViewModel()
-
+    @ObservedObject var appViewModel: AppViewModel
+    @State var isProjectAnalysing: Bool = false
+    @Binding var selectedProject: Project?
+    @Binding var errors: Dictionary<String, [MetricErrorData]>?
+    
     var body: some View {
-        HStack {
-            Button("Select project") {
-                let folderChooserPoint = CGPoint(x: 0, y: 0)
-                let folderChooserSize = CGSize(width: 500, height: 600)
-                let folderChooserRectangle = CGRect(origin: folderChooserPoint, size: folderChooserSize)
-                let folderPicker = NSOpenPanel(contentRect: folderChooserRectangle, styleMask: .utilityWindow, backing: .buffered, defer: true)
-                folderPicker.canChooseDirectories = true
-                folderPicker.canChooseFiles = false
-                folderPicker.allowsMultipleSelection = false
-                folderPicker.canDownloadUbiquitousContents = true
-                folderPicker.canResolveUbiquitousConflicts = true
-                folderPicker.begin { response in
-                    if response == .OK {
-                        let pickedFolder = folderPicker.urls[0]
-                        viewModel.readProject(path: pickedFolder)
+        VStack {
+            if !isProjectAnalysing {
+                Button("Select project") {
+                    let folderChooserPoint = CGPoint(x: 0, y: 0)
+                    let folderChooserSize = CGSize(width: 500, height: 600)
+                    let folderChooserRectangle = CGRect(origin: folderChooserPoint, size: folderChooserSize)
+                    let folderPicker = NSOpenPanel(contentRect: folderChooserRectangle, styleMask: .utilityWindow, backing: .buffered, defer: true)
+                    folderPicker.canChooseDirectories = true
+                    folderPicker.canChooseFiles = false
+                    folderPicker.allowsMultipleSelection = false
+                    folderPicker.canDownloadUbiquitousContents = true
+                    folderPicker.canResolveUbiquitousConflicts = true
+                    folderPicker.begin { response in
+                        if response == .OK {
+                            let pickedFolder = folderPicker.urls[0]
+                            isProjectAnalysing = true
+                            viewModel.readProject(path: pickedFolder, selectedProject: $selectedProject, errors: $errors) {
+                                appViewModel.showChooseProjectView = false
+                            }
+                        }
                     }
+                }
+            } else {
+                Text("Project is being analyzed")
+                VStack {
+                    ProgressView()
                 }
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
-    
-//    func openProjectWindow(project: Project) {
-//        openWindow(id: "project")
-//    }
 }
-
-//struct ChooseProjectView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ChooseProjectView()
-//    }
-//}

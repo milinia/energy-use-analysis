@@ -12,19 +12,27 @@
 		E50600AB2B9DD88E00F998D5 /* BluetoothStopScanCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50600AA2B9DD88E00F998D5 /* BluetoothStopScanCheck.swift */; };
 		E50600AD2B9E18B500F998D5 /* MotionStopUpdatesCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50600AC2B9E18B500F998D5 /* MotionStopUpdatesCheck.swift */; };
 		E50600AF2B9E1C0600F998D5 /* MotionUpdateIntervalCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50600AE2B9E1C0600F998D5 /* MotionUpdateIntervalCheck.swift */; };
+		E50619362C0B359A00E8AFB5 /* Splash in Frameworks */ = {isa = PBXBuildFile; productRef = E50619352C0B359A00E8AFB5 /* Splash */; };
+		E50619382C0B359A00E8AFB5 /* SplashHTMLGen in Frameworks */ = {isa = PBXBuildFile; productRef = E50619372C0B359A00E8AFB5 /* SplashHTMLGen */; };
+		E506193A2C0B359A00E8AFB5 /* SplashMarkdown in Frameworks */ = {isa = PBXBuildFile; productRef = E50619392C0B359A00E8AFB5 /* SplashMarkdown */; };
+		E506193C2C0B359A00E8AFB5 /* SplashTokenizer in Frameworks */ = {isa = PBXBuildFile; productRef = E506193B2C0B359A00E8AFB5 /* SplashTokenizer */; };
+		E506193E2C0B46E400E8AFB5 /* ErrorRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E506193D2C0B46E400E8AFB5 /* ErrorRow.swift */; };
+		E50619412C0C738500E8AFB5 /* AxisTooltip in Frameworks */ = {isa = PBXBuildFile; productRef = E50619402C0C738500E8AFB5 /* AxisTooltip */; };
 		E51484472BA18A8200FB762D /* ReactionDeviceBatteryStateCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51484462BA18A8200FB762D /* ReactionDeviceBatteryStateCheck.swift */; };
 		E51484492BA1A40800FB762D /* QoSDispatchQueueGlobalCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51484482BA1A40800FB762D /* QoSDispatchQueueGlobalCheck.swift */; };
 		E5208B1E2BD7BEAE00B35642 /* CodeGeneration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5208B1D2BD7BEAE00B35642 /* CodeGeneration.swift */; };
 		E5208B222BD7BFD700B35642 /* SaveData.txt in Resources */ = {isa = PBXBuildFile; fileRef = E5208B212BD7BFD700B35642 /* SaveData.txt */; };
 		E5208B242BDCF14600B35642 /* FunctionExecutionWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5208B232BDCF14600B35642 /* FunctionExecutionWrapper.swift */; };
 		E5208B262BDCF5F700B35642 /* FileSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5208B252BDCF5F700B35642 /* FileSaver.swift */; };
-		E5208B282BE4DC1A00B35642 /* SaveData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5208B272BE4DC1A00B35642 /* SaveData.swift */; };
 		E5208B3D2BEFED8A00B35642 /* Tracer.txt in Resources */ = {isa = PBXBuildFile; fileRef = E5208B3C2BEFED8A00B35642 /* Tracer.txt */; };
 		E5208B472BF27D4700B35642 /* FunctionCallData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5208B462BF27D4700B35642 /* FunctionCallData.swift */; };
 		E5208B4B2BF4BC5200B35642 /* BaseRegexChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5208B4A2BF4BC5200B35642 /* BaseRegexChecker.swift */; };
 		E5208B4D2BF77FDB00B35642 /* DelegateCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5208B4C2BF77FDB00B35642 /* DelegateCheck.swift */; };
 		E5208B4F2BF8A16500B35642 /* Warning.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5208B4E2BF8A16500B35642 /* Warning.swift */; };
 		E5208B532BFB44C600B35642 /* ClassWalker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5208B522BFB44C600B35642 /* ClassWalker.swift */; };
+		E5208B552C00BE5700B35642 /* ComputeTasksCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5208B542C00BE5700B35642 /* ComputeTasksCheck.swift */; };
+		E5208B572C00D4B000B35642 /* FunctionExecutionTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5208B562C00D4B000B35642 /* FunctionExecutionTime.swift */; };
+		E5208B5D2C03722F00B35642 /* UIKitClasses.txt in Resources */ = {isa = PBXBuildFile; fileRef = E5208B5C2C03722F00B35642 /* UIKitClasses.txt */; };
 		E526A7DD2B1E0D31009046E1 /* diplomaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E526A7DC2B1E0D31009046E1 /* diplomaApp.swift */; };
 		E526A7DF2B1E0D31009046E1 /* ChooseProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E526A7DE2B1E0D31009046E1 /* ChooseProjectView.swift */; };
 		E526A7E12B1E0D36009046E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E526A7E02B1E0D36009046E1 /* Assets.xcassets */; };
@@ -76,6 +84,9 @@
 		E5D7E9A02B7FE67F0018A5CA /* String++RelativePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7E99F2B7FE67F0018A5CA /* String++RelativePath.swift */; };
 		E5DF10A92B970E74002BB05F /* MetricError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DF10A82B970E74002BB05F /* MetricError.swift */; };
 		E5DF10AD2B975B09002BB05F /* RegexChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DF10AC2B975B09002BB05F /* RegexChecker.swift */; };
+		E5DFDEC12C05EAD7003515F1 /* BrightnessUIScreenCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DFDEC02C05EAD7003515F1 /* BrightnessUIScreenCheck.swift */; };
+		E5DFDEC32C05FC3A003515F1 /* script.sh in Resources */ = {isa = PBXBuildFile; fileRef = E5DFDEC22C05FC3A003515F1 /* script.sh */; };
+		E5DFDEC52C0A569C003515F1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DFDEC42C0A569C003515F1 /* ContentView.swift */; };
 		E5EBEF3F2B205E3800AE13DE /* ProjectReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EBEF3E2B205E3800AE13DE /* ProjectReader.swift */; };
 		E5EBEF422B206E2000AE13DE /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EBEF412B206E2000AE13DE /* Project.swift */; };
 		E5EBEF442B207A0C00AE13DE /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EBEF432B207A0C00AE13DE /* AppError.swift */; };
@@ -100,19 +111,24 @@
 		E50600AA2B9DD88E00F998D5 /* BluetoothStopScanCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothStopScanCheck.swift; sourceTree = "<group>"; };
 		E50600AC2B9E18B500F998D5 /* MotionStopUpdatesCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionStopUpdatesCheck.swift; sourceTree = "<group>"; };
 		E50600AE2B9E1C0600F998D5 /* MotionUpdateIntervalCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionUpdateIntervalCheck.swift; sourceTree = "<group>"; };
+		E50619302C0B353300E8AFB5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E50619322C0B356000E8AFB5 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		E506193D2C0B46E400E8AFB5 /* ErrorRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorRow.swift; sourceTree = "<group>"; };
 		E51484462BA18A8200FB762D /* ReactionDeviceBatteryStateCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionDeviceBatteryStateCheck.swift; sourceTree = "<group>"; };
 		E51484482BA1A40800FB762D /* QoSDispatchQueueGlobalCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QoSDispatchQueueGlobalCheck.swift; sourceTree = "<group>"; };
 		E5208B1D2BD7BEAE00B35642 /* CodeGeneration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeGeneration.swift; sourceTree = "<group>"; };
 		E5208B212BD7BFD700B35642 /* SaveData.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = SaveData.txt; sourceTree = "<group>"; };
 		E5208B232BDCF14600B35642 /* FunctionExecutionWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionExecutionWrapper.swift; sourceTree = "<group>"; };
 		E5208B252BDCF5F700B35642 /* FileSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSaver.swift; sourceTree = "<group>"; };
-		E5208B272BE4DC1A00B35642 /* SaveData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveData.swift; sourceTree = "<group>"; };
 		E5208B3C2BEFED8A00B35642 /* Tracer.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Tracer.txt; sourceTree = "<group>"; };
 		E5208B462BF27D4700B35642 /* FunctionCallData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionCallData.swift; sourceTree = "<group>"; };
 		E5208B4A2BF4BC5200B35642 /* BaseRegexChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRegexChecker.swift; sourceTree = "<group>"; };
 		E5208B4C2BF77FDB00B35642 /* DelegateCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegateCheck.swift; sourceTree = "<group>"; };
 		E5208B4E2BF8A16500B35642 /* Warning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Warning.swift; sourceTree = "<group>"; };
 		E5208B522BFB44C600B35642 /* ClassWalker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassWalker.swift; sourceTree = "<group>"; };
+		E5208B542C00BE5700B35642 /* ComputeTasksCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComputeTasksCheck.swift; sourceTree = "<group>"; };
+		E5208B562C00D4B000B35642 /* FunctionExecutionTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionExecutionTime.swift; sourceTree = "<group>"; };
+		E5208B5C2C03722F00B35642 /* UIKitClasses.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = UIKitClasses.txt; sourceTree = "<group>"; };
 		E526A7D92B1E0D31009046E1 /* diploma.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = diploma.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E526A7DC2B1E0D31009046E1 /* diplomaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = diplomaApp.swift; sourceTree = "<group>"; };
 		E526A7DE2B1E0D31009046E1 /* ChooseProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseProjectView.swift; sourceTree = "<group>"; };
@@ -154,6 +170,9 @@
 		E5D7E99F2B7FE67F0018A5CA /* String++RelativePath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String++RelativePath.swift"; sourceTree = "<group>"; };
 		E5DF10A82B970E74002BB05F /* MetricError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricError.swift; sourceTree = "<group>"; };
 		E5DF10AC2B975B09002BB05F /* RegexChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexChecker.swift; sourceTree = "<group>"; };
+		E5DFDEC02C05EAD7003515F1 /* BrightnessUIScreenCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrightnessUIScreenCheck.swift; sourceTree = "<group>"; };
+		E5DFDEC22C05FC3A003515F1 /* script.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = script.sh; sourceTree = "<group>"; };
+		E5DFDEC42C0A569C003515F1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E5EBEF3E2B205E3800AE13DE /* ProjectReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectReader.swift; sourceTree = "<group>"; };
 		E5EBEF412B206E2000AE13DE /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		E5EBEF432B207A0C00AE13DE /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
@@ -167,9 +186,14 @@
 				E53C26DC2BA434C900C8748B /* SwiftBasicFormat in Frameworks */,
 				E53C26F02BA434C900C8748B /* SwiftSyntaxBuilder in Frameworks */,
 				E5D7E99B2B7FD6020018A5CA /* Files in Frameworks */,
+				E506193C2C0B359A00E8AFB5 /* SplashTokenizer in Frameworks */,
+				E50619412C0C738500E8AFB5 /* AxisTooltip in Frameworks */,
 				E53C26DE2BA434C900C8748B /* SwiftCompilerPlugin in Frameworks */,
 				E53C26E62BA434C900C8748B /* SwiftOperators in Frameworks */,
+				E50619362C0B359A00E8AFB5 /* Splash in Frameworks */,
 				E53C26EE2BA434C900C8748B /* SwiftSyntax in Frameworks */,
+				E506193A2C0B359A00E8AFB5 /* SplashMarkdown in Frameworks */,
+				E50619382C0B359A00E8AFB5 /* SplashHTMLGen in Frameworks */,
 				E53C26E42BA434C900C8748B /* SwiftIDEUtils in Frameworks */,
 				E53C26E82BA434C900C8748B /* SwiftParser in Frameworks */,
 				E53C26E22BA434C900C8748B /* SwiftDiagnostics in Frameworks */,
@@ -200,7 +224,7 @@
 				E5208B3C2BEFED8A00B35642 /* Tracer.txt */,
 				E5208B232BDCF14600B35642 /* FunctionExecutionWrapper.swift */,
 				E5208B252BDCF5F700B35642 /* FileSaver.swift */,
-				E5208B272BE4DC1A00B35642 /* SaveData.swift */,
+				E5DFDEC22C05FC3A003515F1 /* script.sh */,
 			);
 			path = "Code generation";
 			sourceTree = "<group>";
@@ -250,6 +274,8 @@
 		E526A7F02B1E0D9D009046E1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E50619322C0B356000E8AFB5 /* ImageIO.framework */,
+				E50619302C0B353300E8AFB5 /* CoreGraphics.framework */,
 				E53C26D72BA4331600C8748B /* XCTest.framework */,
 				E526A7F32B1E0D9D009046E1 /* XcodeKit.framework */,
 			);
@@ -263,6 +289,7 @@
 				E555350A2B32D74100217131 /* ContentRow.swift */,
 				E53487E72B7DFD340063C047 /* FileView.swift */,
 				E5575F632B81364600859A4B /* ProjectViewModel.swift */,
+				E506193D2C0B46E400E8AFB5 /* ErrorRow.swift */,
 			);
 			path = ShowProjectProblems;
 			sourceTree = "<group>";
@@ -293,6 +320,7 @@
 			isa = PBXGroup;
 			children = (
 				E526A7DC2B1E0D31009046E1 /* diplomaApp.swift */,
+				E5DFDEC42C0A569C003515F1 /* ContentView.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -377,6 +405,7 @@
 			children = (
 				E5525B212BA04DCE00E55692 /* BrightnessDarkModeCheck.swift */,
 				E5525B232BA077F400E55692 /* BrightnessDarkModeAvaliableInfoPlistCheck.swift */,
+				E5DFDEC02C05EAD7003515F1 /* BrightnessUIScreenCheck.swift */,
 			);
 			path = Brightness;
 			sourceTree = "<group>";
@@ -401,6 +430,7 @@
 		E59853692BA5D61400C3949D /* Compute Tasks */ = {
 			isa = PBXGroup;
 			children = (
+				E5208B542C00BE5700B35642 /* ComputeTasksCheck.swift */,
 			);
 			path = "Compute Tasks";
 			sourceTree = "<group>";
@@ -428,6 +458,7 @@
 			children = (
 				E5B312662BBC76480055EE57 /* ErrorCorrector.swift */,
 				E5B3126B2BBD4E020055EE57 /* Corrector.swift */,
+				E5208B5C2C03722F00B35642 /* UIKitClasses.txt */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -464,6 +495,7 @@
 				E55535142B32F56200217131 /* ContentRowData.swift */,
 				E5208B462BF27D4700B35642 /* FunctionCallData.swift */,
 				E5208B4E2BF8A16500B35642 /* Warning.swift */,
+				E5208B562C00D4B000B35642 /* FunctionExecutionTime.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -500,6 +532,11 @@
 				E53C26EF2BA434C900C8748B /* SwiftSyntaxBuilder */,
 				E53C26F82BA4360C00C8748B /* SwiftSyntaxMacroExpansion */,
 				E53C26FA2BA4360C00C8748B /* SwiftSyntaxMacros */,
+				E50619352C0B359A00E8AFB5 /* Splash */,
+				E50619372C0B359A00E8AFB5 /* SplashHTMLGen */,
+				E50619392C0B359A00E8AFB5 /* SplashMarkdown */,
+				E506193B2C0B359A00E8AFB5 /* SplashTokenizer */,
+				E50619402C0C738500E8AFB5 /* AxisTooltip */,
 			);
 			productName = diploma;
 			productReference = E526A7D92B1E0D31009046E1 /* diploma.app */;
@@ -517,6 +554,7 @@
 				TargetAttributes = {
 					E526A7D82B1E0D31009046E1 = {
 						CreatedOnToolsVersion = 14.2;
+						LastSwiftMigration = 1520;
 					};
 				};
 			};
@@ -532,6 +570,8 @@
 			packageReferences = (
 				E5D7E9992B7FD6020018A5CA /* XCRemoteSwiftPackageReference "Files" */,
 				E53C26DA2BA434C900C8748B /* XCRemoteSwiftPackageReference "swift-syntax" */,
+				E50619342C0B359A00E8AFB5 /* XCRemoteSwiftPackageReference "Splash" */,
+				E506193F2C0C738500E8AFB5 /* XCRemoteSwiftPackageReference "AxisTooltip" */,
 			);
 			productRefGroup = E526A7DA2B1E0D31009046E1 /* Products */;
 			projectDirPath = "";
@@ -548,6 +588,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5208B222BD7BFD700B35642 /* SaveData.txt in Resources */,
+				E5DFDEC32C05FC3A003515F1 /* script.sh in Resources */,
+				E5208B5D2C03722F00B35642 /* UIKitClasses.txt in Resources */,
 				E5208B3D2BEFED8A00B35642 /* Tracer.txt in Resources */,
 				E526A7E42B1E0D36009046E1 /* Preview Assets.xcassets in Resources */,
 				E526A7E12B1E0D36009046E1 /* Assets.xcassets in Resources */,
@@ -562,13 +604,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				E526A7DF2B1E0D31009046E1 /* ChooseProjectView.swift in Sources */,
+				E5208B552C00BE5700B35642 /* ComputeTasksCheck.swift in Sources */,
 				E5B3126E2BBD51920055EE57 /* MotionErrorCorrector.swift in Sources */,
 				E5B312702BBD51E80055EE57 /* TimerErrorCorrector.swift in Sources */,
 				E526A7DD2B1E0D31009046E1 /* diplomaApp.swift in Sources */,
 				E5EBEF442B207A0C00AE13DE /* AppError.swift in Sources */,
 				E5B312762BBD52FE0055EE57 /* BrightnessErrorCorrector.swift in Sources */,
+				E5DFDEC12C05EAD7003515F1 /* BrightnessUIScreenCheck.swift in Sources */,
+				E5DFDEC52C0A569C003515F1 /* ContentView.swift in Sources */,
 				E5B312742BBD52A70055EE57 /* ReactionErrorCorrector.swift in Sources */,
 				E54367A32B5A770B00CFBAF7 /* ChooseProjectViewModel.swift in Sources */,
+				E5208B572C00D4B000B35642 /* FunctionExecutionTime.swift in Sources */,
 				E5208B532BFB44C600B35642 /* ClassWalker.swift in Sources */,
 				E5B3127A2BBD54590055EE57 /* QualityOfServiceErrorCorrector.swift in Sources */,
 				E598536D2BA5D84400C3949D /* ReactionUseDevicePowerModeCheck.swift in Sources */,
@@ -579,7 +625,6 @@
 				E55535152B32F56200217131 /* ContentRowData.swift in Sources */,
 				E54367A52B62B0EE00CFBAF7 /* ProjectTraverser.swift in Sources */,
 				E5EBEF3F2B205E3800AE13DE /* ProjectReader.swift in Sources */,
-				E5208B282BE4DC1A00B35642 /* SaveData.swift in Sources */,
 				E5575F642B81364600859A4B /* ProjectViewModel.swift in Sources */,
 				E555350B2B32D74100217131 /* ContentRow.swift in Sources */,
 				E5DF10A92B970E74002BB05F /* MetricError.swift in Sources */,
@@ -589,6 +634,7 @@
 				E50600A42B9CC08C00F998D5 /* LocationPausesBackgroundUpdateAutomaticallyCheck.swift in Sources */,
 				E598536B2BA5D6C400C3949D /* TimerToleranceCheck.swift in Sources */,
 				E5EBEF422B206E2000AE13DE /* Project.swift in Sources */,
+				E506193E2C0B46E400E8AFB5 /* ErrorRow.swift in Sources */,
 				E5B312782BBD536E0055EE57 /* CacheErrorCorrector.swift in Sources */,
 				E51484492BA1A40800FB762D /* QoSDispatchQueueGlobalCheck.swift in Sources */,
 				E5B312672BBC76480055EE57 /* ErrorCorrector.swift in Sources */,
@@ -743,6 +789,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = diploma/diploma.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
@@ -762,6 +809,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = evelina.diploma;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -771,6 +819,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = diploma/diploma.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
@@ -818,6 +867,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		E50619342C0B359A00E8AFB5 /* XCRemoteSwiftPackageReference "Splash" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JohnSundell/Splash";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.16.0;
+			};
+		};
+		E506193F2C0C738500E8AFB5 /* XCRemoteSwiftPackageReference "AxisTooltip" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jasudev/AxisTooltip";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.5.0;
+			};
+		};
 		E53C26DA2BA434C900C8748B /* XCRemoteSwiftPackageReference "swift-syntax" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apple/swift-syntax.git";
@@ -838,6 +903,31 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		E50619352C0B359A00E8AFB5 /* Splash */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E50619342C0B359A00E8AFB5 /* XCRemoteSwiftPackageReference "Splash" */;
+			productName = Splash;
+		};
+		E50619372C0B359A00E8AFB5 /* SplashHTMLGen */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E50619342C0B359A00E8AFB5 /* XCRemoteSwiftPackageReference "Splash" */;
+			productName = SplashHTMLGen;
+		};
+		E50619392C0B359A00E8AFB5 /* SplashMarkdown */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E50619342C0B359A00E8AFB5 /* XCRemoteSwiftPackageReference "Splash" */;
+			productName = SplashMarkdown;
+		};
+		E506193B2C0B359A00E8AFB5 /* SplashTokenizer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E50619342C0B359A00E8AFB5 /* XCRemoteSwiftPackageReference "Splash" */;
+			productName = SplashTokenizer;
+		};
+		E50619402C0C738500E8AFB5 /* AxisTooltip */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E506193F2C0C738500E8AFB5 /* XCRemoteSwiftPackageReference "AxisTooltip" */;
+			productName = AxisTooltip;
+		};
 		E53C26DB2BA434C900C8748B /* SwiftBasicFormat */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E53C26DA2BA434C900C8748B /* XCRemoteSwiftPackageReference "swift-syntax" */;

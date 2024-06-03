@@ -9,16 +9,12 @@ import SwiftUI
 
 @main
 struct diplomaApp: App {
+    @StateObject private var viewModel = AppViewModel()
+    @State private var selectedProject: Project?
     
     var body: some Scene {
         WindowGroup {
-            ChooseProjectView()
+            ContentView()
         }
-        
-//        WindowGroup("Project", id: "project", for: ProjectErrors.self) { project in
-//            ProjectView(project: project.wrappedValue?.project, errors: project.wrappedValue?.errors)
-//        }
-//        .commandsRemoved()
-//        .defaultSize(<#T##size: CGSize##CGSize#>)
     }
 }

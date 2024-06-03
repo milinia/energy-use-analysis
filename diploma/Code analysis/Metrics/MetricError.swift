@@ -12,67 +12,68 @@ protocol MetricError {
 }
 
 enum Location: String, MetricError {
-    case highAccuracy = "High location accuracy is selected"
-    case allowBackgroundWork = "Getting a location works in the background"
-    case pauseUpdatesAutomatically = "Prevents the system from updates if they are not needed"
-    case unstoppableWork  = ""
+    
+    case highAccuracy = "High location accuracy is selected, which may lead to higher battery consumption."
+    case allowBackgroundWork = "Getting a location works in the background, which could impact battery life."
+    case pauseUpdatesAutomatically = "Prevents the system from updates if they are not needed, potentially reducing unnecessary battery drain."
+    case unstoppableWork  = "Location services are continuously active, potentially causing significant battery drain."
     
     var errorMessage: String {
         return self.rawValue
     }
 }
 enum TimerError: String, MetricError {
-    case timerTimeout = ""
-    case timerTolerace = "Not set tolelance for timer"
+    case timerTimeout = "The timer has reached its timeout period without any further action."
+    case timerTolerace = "No tolerance is set for the timer, which can lead to inefficient use of system resources."
     
     var errorMessage: String {
         return self.rawValue
     }
 }
 enum Bluetooth: String, MetricError {
-    case unstoppableWork = ""
-    case allowedDuplicatesOption = "Central disabled filtering and generates a discovery event each time it receives an advertising packet from the peripheral"
+    case unstoppableWork = "Bluetooth operations are running continuously, which may lead to excessive battery consumption."
+    case allowedDuplicatesOption = "Central disabled filtering and generates a discovery event each time it receives an advertising packet from the peripheral, increasing processing load and power usage."
     
     var errorMessage: String {
         return self.rawValue
     }
 }
 enum Motion: String, MetricError {
-    case unstoppableWork = ""
-    case unsetedInterval = "Setted interval hepls to increase battery life"
+    case unstoppableWork = "Motion sensors are active continuously, which can significantly impact battery life."
+    case unsetedInterval = "Setting intervals for motion updates helps increase battery life by reducing the frequency of sensor activations."
     
     var errorMessage: String {
         return self.rawValue
     }
 }
 enum Brightness: String, MetricError {
-    case highBrightness = ""
-    case unableDarkThemeInInfoPlist = "Turned off dark theme in Info.plist"
-    case unableViewDarkTheme = "Dark theme let "
+    case highBrightness = "High screen brightness is set, which can lead to increased battery drain."
+    case unableDarkThemeInInfoPlist = "Dark theme is disabled in Info.plist, potentially missing out on battery-saving benefits of dark mode."
+    case unableViewDarkTheme = "Dark theme is not enabled for this view, potentially leading to higher power usage on OLED screens."
     
     var errorMessage: String {
         return self.rawValue
     }
 }
 enum Reaction: String, MetricError {
-    case lowPowerModeEnable = "It good to react when system has not much energy"
-    case deviceBatteryStateChanged = "It good to react when device charged"
-    case applicationEntersBackground = ""
+    case lowPowerModeEnable = "It is beneficial to adjust the app's behavior when the system is in low power mode to conserve battery."
+    case deviceBatteryStateChanged = "Responding to changes in the device's battery state can help manage power usage effectively."
+    case applicationEntersBackground = "Handling tasks appropriately when the application enters the background can optimize battery usage."
     
     var errorMessage: String {
         return self.rawValue
     }
 }
 enum CacheError: String, MetricError {
-    case cashingImages = "Images should be cashed"
-    case cashingRequests = ""
+    case cashingImages = "Images should be cached to improve performance and reduce network usage."
+    case cashingRequests = "Requests should be cached to minimize redundant network calls and improve efficiency."
     
     var errorMessage: String {
         return self.rawValue
     }
 }
 enum QualityOfService: String, MetricError {
-    case qosForTask = ""
+    case qosForTask = "The quality of service (QoS) for this task is not set, which could lead to inefficient resource utilization."
     
     var errorMessage: String {
         return self.rawValue
@@ -80,14 +81,15 @@ enum QualityOfService: String, MetricError {
 }
 
 enum ComputeTask: String, MetricError {
-    case copmuteTaskInForeground = ""
+    case copmuteTaskInForeground = "Compute-intensive tasks should be minimized in the foreground to ensure a smooth user experience and reduce battery drain."
     
     var errorMessage: String {
         return self.rawValue
     }
 }
 
-struct MetricErrorData {
+struct MetricErrorData: Identifiable {
+    let id: UUID = UUID()
     let type: MetricError
     let range: ErrorRange
     let file: DFile

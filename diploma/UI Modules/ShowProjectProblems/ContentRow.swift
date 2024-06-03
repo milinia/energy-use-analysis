@@ -18,8 +18,10 @@ struct ContentRow: View {
                 .frame(width: 15, height: 15)
             Text(contentData.content.path.relativePath ?? "")
             Spacer()
-            Image(systemName: "exclamationmark.triangle.fill")
-                .foregroundColor(.red)
+            if contentData.isHasError {
+                Image(systemName: "exclamationmark.triangle.fill")
+                    .foregroundColor(.red)
+            }
         }
     }
 }

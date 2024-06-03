@@ -11,12 +11,15 @@ class BrightnessDarkModeCheck: MetricCheck {
     
     let regexPattern: String = "(UIViewController).+(setOverrideUserInterfaceStyle:1)"
     let regexChecker: RegexCheck
+    var count: Int = 0
     
     init(regexChecker: RegexCheck) {
         self.regexChecker = regexChecker
     }
     
     func check(file: DFile) -> [MetricErrorData] {
-        return regexChecker.checkForPattern(file: file, regexPattern: regexPattern, error: Brightness.unableViewDarkTheme)
+        let errors = regexChecker.checkForPattern(file: file, regexPattern: regexPattern, error: Brightness.unableViewDarkTheme)
+        count += errors.count
+        return errors
     }
 }

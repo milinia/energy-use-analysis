@@ -44,7 +44,7 @@ class TimerToleranceCheck: SyntaxVisitor {
     }
      
     override func visit(_ node: MemberAccessExprSyntax) -> SyntaxVisitorContinueKind {
-        if let key = node.base?.as(DeclReferenceExprSyntax.self)?.baseName.text, let value = timerVariableNames[key] {
+        if let key = node.base?.as(DeclReferenceExprSyntax.self)?.baseName.text {
             if node.declName.baseName.text == "tolerance"  {
                 timerVariableNames[key]?.0 = true
             }

@@ -56,7 +56,6 @@ class ErrorCorrector {
         case is Reaction: break
         case is CacheError: break
         case is QualityOfService: break
-        case is RetryDelay: break
         case is ComputeTask: break
         default: break
         }

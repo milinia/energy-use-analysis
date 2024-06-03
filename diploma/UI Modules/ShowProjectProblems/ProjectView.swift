@@ -8,26 +8,67 @@
 import SwiftUI
 
 struct ProjectView: View {
-
-    var project: Project?
-    var errors: Dictionary<String, [MetricErrorData]>?
+    
+    @Binding var errors: Dictionary<String, [MetricErrorData]>?
     @State private var selectedContent: Content.ID?
+    @State private var selectedError: Content.ID?
+    @Binding var selectedProject: Project?
     @StateObject var viewModel = ProjectViewModel()
-
-    init(project: Project?, errors: Dictionary<String, [MetricErrorData]>?) {
-        self.project = project
-        self.errors = errors
-    }
-
+    @State private var isProjectShowing: Bool = true
+    @State private var isButtonPressed = false
+    
     var body: some View {
-        if let project = project {
+        if let project = selectedProject {
             NavigationSplitView {
-                List(project.content, children: \.content, selection: $selectedContent) { item in
-                    let isHasError = errors?[item.path] != nil
-                    ContentRow(contentData: ContentRowData(content: item, isHasError: isHasError))
+                Divider()
+                HStack {
+                    Spacer()
+                    Button(action: {
+                        isProjectShowing = true
+                    }) {
+                        Image(systemName: "folder.fill")
+                        .foregroundColor(.blue)
+                    }
+                    .buttonStyle(PlainButtonStyle())
+                    Button(action: {
+                        isProjectShowing = false
+                    }) {
+                        Image(systemName: "exclamationmark.triangle.fill")
+                        .foregroundColor(.red)
+                    }
+                    .buttonStyle(PlainButtonStyle())
+                    Button(action: {
+                        //затратные операции
+                    }) {
+                        Image(systemName: "list.bullet.rectangle")
+                        .foregroundColor(.blue)
+                    }
+                    .buttonStyle(PlainButtonStyle())
+                    Spacer()
+                }
+                .padding(.vertical, 1)
+                Divider()
+                if isProjectShowing {
+                    List(project.content, children: \.content, selection: $selectedContent) { item in
+                        let isHasError = errors?[item.path] != nil
+                        ContentRow(contentData: ContentRowData(content: item, isHasError: isHasError))
                         .onAppear {
                             saveContent(content: item)
                         }
+//                        if isHasError {
+//                            
+//                        }
+                    }
+                } else {
+                    List {
+                        ForEach(errors?.keys.sorted() ?? [], id: \.self) { key in
+                            Section(header: Text(key.relativePath ?? "")) {
+                                ForEach(errors?[key] ?? []) { error in
+                                    Text(error.type.errorMessage)
+                                }
+                            }
+                        }
+                    }
                 }
             } detail: {
                 let element = viewModel.contentDictionary[selectedContent ?? UUID()]
@@ -46,13 +87,4 @@ struct ProjectView: View {
         viewModel.contentDictionary[content.id] = content
     }
 }
-
-//struct ProjectView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ProjectView(project: Project(name: "App",
-//                                     content: [File(path: "AppDelegete.swift", type: .swift, data: "djvndjvnd".data(using: .utf8) ?? Data()),
-//                                               Folder(path: "AppFolder",
-//                                                      content: [File(path: "StartView.swift", type: .swift, data: "djvndjfvfvfv vfvfvfvfv vfvfvfvfv vfvfvfvfvfv fvfvfvfv vnd".data(using: .utf8) ?? Data())])], path: URL(fileURLWithPath: "")))
-//    }
-//}
 
