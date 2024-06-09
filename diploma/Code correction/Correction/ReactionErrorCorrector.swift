@@ -9,31 +9,31 @@ import Foundation
 
 class ReactionErrorCorrector: Corrector {
     
-    func correct(error: MetricErrorData) -> MetricErrorData {
+    func correct(error: MetricErrorData, fileOffset: Dictionary<String, Int>) -> Int {
         switch error.type {
         case let reactionError as Reaction:
             switch reactionError {
             case .lowPowerModeEnable:
-                break
+                correctLowPowerModeEnableError(error: error)
             case .deviceBatteryStateChanged:
-                break
+                correctDeviceBatteryStateChangedError(error: error)
             case .applicationEntersBackground:
-                break
+                correctApplicationEntersBackgroundError(error: error)
             }
         default: break
         }
-        return error
+        return 0
     }
     
-    private func correctLowPowerModeEnableError() {
+    private func correctLowPowerModeEnableError(error: MetricErrorData) {
         
     }
     
-    private func correctDeviceBatteryStateChangedError() {
+    private func correctDeviceBatteryStateChangedError(error: MetricErrorData) {
         
     }
     
-    private func correctApplicationEntersBackgroundError() {
+    private func correctApplicationEntersBackgroundError(error: MetricErrorData) {
         
     }
 }

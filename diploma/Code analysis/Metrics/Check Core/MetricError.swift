@@ -94,6 +94,23 @@ struct MetricErrorData: Identifiable {
     let range: ErrorRange
     let file: DFile
     let canFixError: Bool
+    let functionCall: FunctionExecutionTime?
+    
+    init(type: MetricError, range: ErrorRange, file: DFile, canFixError: Bool, functionCall: FunctionExecutionTime) {
+        self.type = type
+        self.range = range
+        self.file = file
+        self.canFixError = canFixError
+        self.functionCall = functionCall
+    }
+    
+    init(type: MetricError, range: ErrorRange, file: DFile, canFixError: Bool) {
+        self.type = type
+        self.range = range
+        self.file = file
+        self.canFixError = canFixError
+        self.functionCall = nil
+    }
 }
 
 struct ErrorRange {

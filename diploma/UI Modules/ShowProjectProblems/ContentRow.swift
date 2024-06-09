@@ -25,15 +25,3 @@ struct ContentRow: View {
         }
     }
 }
-
-struct ContentRowFile_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentRow(contentData: ContentRowData(content: DFile(path: "Downloads/Class.swift", type: .swift, data: Data()), isHasError: true))
-    }
-}
-
-struct ContentRowFolder_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentRow(contentData: ContentRowData(content: DFolder(path: "Downloads/Assets", content: []), isHasError: false))
-    }
-}

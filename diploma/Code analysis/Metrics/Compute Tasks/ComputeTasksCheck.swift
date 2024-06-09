@@ -10,7 +10,7 @@ import Files
 
 class ComputeTasksCheck: MetricCheck {
     
-    func getFunctionExectionTime(path: String) {
+    func getFunctionExectionTime(path: String) -> [FunctionExecutionTime] {
         var functionCall: [FunctionExecutionTime] = []
         do {
             let file = try File(path: path)
@@ -29,8 +29,9 @@ class ComputeTasksCheck: MetricCheck {
         } catch {
             
         }
-        let sortedFunctionCalls = functionCall.sorted { $0.executionTime > $1.executionTime }
-        let functionCallsMoreThan100 = functionCall.filter({ $0.executionTime > 0.1 })
+        let functionCallsMoreThan100 = functionCall.filter({ $0.executionTime > 0.01 })
+        let sortedFunctionCalls = functionCallsMoreThan100.sorted { $0.executionTime > $1.executionTime }
+        return sortedFunctionCalls
     }
     
     func check(file: DFile) -> [MetricErrorData] {

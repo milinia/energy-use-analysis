@@ -11,8 +11,12 @@ struct ChooseProjectView: View {
     @StateObject var viewModel = ChooseProjectViewModel()
     @ObservedObject var appViewModel: AppViewModel
     @State var isProjectAnalysing: Bool = false
+    @State var isCodeGenerated: Bool = false
     @Binding var selectedProject: Project?
+    @Binding var projectInfo: ProjectInfo?
     @Binding var errors: Dictionary<String, [MetricErrorData]>?
+    @Binding var warnings: Dictionary<String, [Warning]>?
+    @Binding var functionCalls: [FunctionExecutionTime]?
     
     var body: some View {
         VStack {
@@ -31,16 +35,34 @@ struct ChooseProjectView: View {
                         if response == .OK {
                             let pickedFolder = folderPicker.urls[0]
                             isProjectAnalysing = true
-                            viewModel.readProject(path: pickedFolder, selectedProject: $selectedProject, errors: $errors) {
-                                appViewModel.showChooseProjectView = false
+                            viewModel.readProject(path: pickedFolder, 
+                                                  selectedProject: $selectedProject,
+                                                  projectInfo: $projectInfo
+                            ) {
+                                isCodeGenerated = true
                             }
                         }
                     }
                 }
             } else {
-                Text("Project is being analyzed")
-                VStack {
-                    ProgressView()
+                if !isCodeGenerated {
+                    Text("Project is being analyzed")
+                    VStack {
+                        ProgressView()
+                    }
+                } else {
+                    VStack(spacing: 10) {
+                        Text("Open project folder and enter to folder Test")
+                        Text("Then open terminal and run \"sh script.sh\"")
+                        Text("Then run created project and test that you want to check")
+                        Button("Done") {
+                            isProjectAnalysing = true
+                            isCodeGenerated = false
+                            viewModel.findProjectErrors(errors: $errors, projectInfo: $projectInfo, warnings: $warnings, functionCalls: $functionCalls) {
+                                appViewModel.showChooseProjectView = false
+                            }
+                        }
+                    }
                 }
             }
         }

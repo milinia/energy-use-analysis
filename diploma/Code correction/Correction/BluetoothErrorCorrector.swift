@@ -9,40 +9,41 @@ import Foundation
 
 class BluetoothErrorCorrector: Corrector {
     
-    let file: DFile
-    let classInfo: ClassInfo
+    let classInfo: ClassInfo?
     let regexChecker: RegexChecker
     
-    init(file: DFile, classInfo: ClassInfo, regexChecker: RegexChecker) {
-        self.file = file
+    init(classInfo: ClassInfo?, regexChecker: RegexChecker) {
         self.classInfo = classInfo
         self.regexChecker = regexChecker
     }
     
-    func correct(error: MetricErrorData) -> MetricErrorData {
+    func correct(error: MetricErrorData, fileOffset: Dictionary<String, Int>) -> Int {
+        let offset = fileOffset[error.file.path] ?? 0
         switch error.type {
         case let bluetoothError as Bluetooth:
             switch bluetoothError {
             case .unstoppableWork:
-                break
+                correctUnstoppableWorkError(error: error)
             case .allowedDuplicatesOption:
-                break
+                correctAllowedDuplicatesOptionError(error: error, offset: offset)
             }
         default: break
         }
-        return error
+        return 0
     }
     
-    private func correctUnstoppableWorkError() {
+    private func correctUnstoppableWorkError(error: MetricErrorData) {
         // нет исправления
     }
     
-    private func correctAllowedDuplicatesOptionError() {
-        let lines = Array(file.lines[classInfo.startLine...classInfo.endLine])
-        for i in 0...lines.count - 1 {
-            if let match = regexChecker.checkStringRegexRange(pattern: #"CBCentralManagerScanOptionAllowDuplicatesKey\s*:\s*true[,]*"#, string: lines[i]) {
-                if let range = Range(match, in: lines[i]) {
-                    file.lines[classInfo.startLine + i].removeSubrange(range)
+    private func correctAllowedDuplicatesOptionError(error: MetricErrorData, offset: Int) {
+        if let classInfo = classInfo {
+            let lines = Array(error.file.lines[classInfo.startLine - 1 + offset...classInfo.endLine - 1 + offset])
+            for i in 0...lines.count - 1 {
+                if let match = regexChecker.checkStringRegexRange(pattern: #"CBCentralManagerScanOptionAllowDuplicatesKey\s*:\s*true[,]*"#, string: lines[i]) {
+                    if let range = Range(match, in: lines[i]) {
+                        error.file.lines[classInfo.startLine + i - 1 + offset].removeSubrange(range)
+                    }
                 }
             }
         }

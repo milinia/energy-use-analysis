@@ -8,7 +8,7 @@
 import Foundation
 
 
-class Project: Codable, Hashable {
+class Project: Codable, Hashable, NSCopying {
     let name: String
     let content: [Content]
     let path: URL
@@ -26,10 +26,21 @@ class Project: Codable, Hashable {
     func hash(into hasher: inout Hasher) {
         hasher.combine(path)
     }
+    
+    func copy(with zone: NSZone? = nil) -> Any {
+        var contentCopies: [Content] = []
+        contentCopies.forEach { content in
+            if let content = content.copy() as? Content {
+                contentCopies.append(content)
+            }
+        }
+        let copy = Project(name: name, content: contentCopies, path: path)
+        return copy
+    }
+    
 }
 
-class Content: Identifiable, Hashable, Codable {
-    
+class Content: Identifiable, Hashable, Codable, NSCopying {
     var id: UUID = UUID()
     let path: String
     let content: [Content]?
@@ -45,6 +56,11 @@ class Content: Identifiable, Hashable, Codable {
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
+    }
+    
+    func copy(with zone: NSZone? = nil) -> Any {
+        let copy = Content(path: path, content: content)
+        return copy
     }
 }
 
@@ -75,6 +91,11 @@ class DFile: Content {
     
     required init(from decoder: Decoder) throws {
         fatalError("init(from:) has not been implemented")
+    }
+    
+    override func copy(with zone: NSZone? = nil) -> Any {
+        let copy = DFile(path: path, type: type, data: data)
+        return copy
     }
 }
 

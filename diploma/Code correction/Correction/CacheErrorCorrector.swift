@@ -9,27 +9,29 @@ import Foundation
 
 class CacheErrorCorrector: Corrector {
     
-    func correct(error: MetricErrorData) -> MetricErrorData {
+    func correct(error: MetricErrorData, fileOffset: Dictionary<String, Int>) -> Int {
+        let offset = fileOffset[error.file.path] ?? 0
         switch error.type {
         case let cacheError as CacheError:
             switch cacheError {
             case .cashingImages:
-                break
+                correctCashingImagesError(error: error)
             case .cashingRequests:
-                correctCacheRequestsError(error: error)
+                correctCacheRequestsError(error: error, offset: offset)
+                return 1
             }
         default: break
         }
-        return error
+        return 0
     }
     
-    private func correctCashingImagesError() {
+    private func correctCashingImagesError(error: MetricErrorData) {
         
     }
     
-    private func correctCacheRequestsError(error: MetricErrorData) {
-        let line = error.file.lines[error.range.start]
-        let pattern = "(?:let|var)?\\s*(\\w+)\\s*=\\s*URLRequest\\("
+    private func correctCacheRequestsError(error: MetricErrorData, offset: Int) {
+        let line = error.file.lines[error.range.start - 1 + offset]
+        let pattern = #"(?:let|var)\s+(\w+)\s*=\s*URLRequest\([^)]*\)"#
         var varName = ""
         do {
             let regex = try NSRegularExpression(pattern: pattern, options: [])
@@ -41,8 +43,7 @@ class CacheErrorCorrector: Corrector {
         } catch {
             
         }
-        var newLine = String(repeating: " ", count: error.file.lines[error.range.start].spaceFromLineStart)
-        newLine += "\(varName).cachePolicy = .reloadRevalidatingCacheData"
-        error.file.lines[error.range.start + 1].append(newLine)
+        let newLine = String(repeating: " ", count: error.file.lines[error.range.start - 1 + offset].spaceFromLineStart) + "\(varName).cachePolicy = .reloadRevalidatingCacheData"
+        error.file.lines.insert(newLine, at: error.range.start + offset)
     }
 }

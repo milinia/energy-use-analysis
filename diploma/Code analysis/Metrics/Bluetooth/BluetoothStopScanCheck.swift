@@ -10,6 +10,7 @@ import Foundation
 class BluetoothStopScanCheck: MetricCheck {
     
     let regexPattern: String = "(CBCentralManager).+(stopScan)"
+    let useRegexPattern: String = "(CBCentralManager).+(scanForPeripherals)"
     let regexChecker: RegexCheck
     
     init(regexChecker: RegexCheck) {
@@ -17,8 +18,10 @@ class BluetoothStopScanCheck: MetricCheck {
     }
     
     func check(file: DFile) -> [MetricErrorData] {
-        if !regexChecker.checkForPattern(file: file, regexPattern: regexPattern) {
-            return [MetricErrorData(type: Bluetooth.unstoppableWork, range: ErrorRange(start: 0, end: 0), file: file, canFixError: false)]
+        if regexChecker.checkForPattern(file: file, regexPattern: useRegexPattern) {
+            if !regexChecker.checkForPattern(file: file, regexPattern: regexPattern) {
+                return [MetricErrorData(type: Bluetooth.unstoppableWork, range: ErrorRange(start: 0, end: 0), file: file, canFixError: false)]
+            }
         }
         return []
     }

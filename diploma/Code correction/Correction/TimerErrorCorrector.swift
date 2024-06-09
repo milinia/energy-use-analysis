@@ -11,26 +11,27 @@ class TimerErrorCorrector: Corrector {
     
     var varCountForFile: Dictionary<String, Int> = [:]
     
-    func correct(error: MetricErrorData) -> MetricErrorData {
+    func correct(error: MetricErrorData, fileOffset: Dictionary<String, Int>) -> Int {
+        let offset = fileOffset[error.file.path] ?? 0
         switch error.type {
         case let timerError as TimerError:
             switch timerError {
             case .timerTimeout:
                 break
             case .timerTolerace:
-                correctTimerToleraceError(error: error)
+                return correctTimerToleraceError(error: error, offset: offset)
             }
         default: break
         }
-        return error
+        return 0
     }
     
     private func correctTimerTimeoutError() {
         
     }
     
-    private func correctTimerToleraceError(error: MetricErrorData) {
-        let line = error.file.lines[error.range.start]
+    private func correctTimerToleraceError(error: MetricErrorData, offset: Int) -> Int{
+        let line = error.file.lines[error.range.start - 1 + offset]
         if line.contains("=") {
             let pattern = "(?:let|var)?\\s*(\\w+)\\s*=\\s*Timer\\("
             var varName = ""
@@ -43,9 +44,9 @@ class TimerErrorCorrector: Corrector {
                 }
             } catch {
             }
-            var newLine = String(repeating: " ", count: error.file.lines[error.range.start].spaceFromLineStart)
-            newLine += "\(varName).tolerance = 0.1"
-            error.file.lines[error.range.end + 1].append(newLine)
+            let newLine = String(repeating: " ", count: error.file.lines[error.range.start].spaceFromLineStart) + "\(varName).tolerance = 0.1"
+            error.file.lines[error.range.end + offset].append(newLine)
+            return 1
         } else {
             let spaceFromLineStart = error.file.lines[error.range.start].spaceFromLineStart
             if let value = varCountForFile[error.file.path] {
@@ -57,6 +58,7 @@ class TimerErrorCorrector: Corrector {
             } else {
                 varCountForFile[error.file.path] = 1
             }
+            return 0
         }
     }
 }

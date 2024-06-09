@@ -8,5 +8,5 @@
 import Foundation
 
 protocol Corrector {
-    func correct(error: MetricErrorData) -> MetricErrorData
+    func correct(error: MetricErrorData, fileOffset: Dictionary<String, Int>) -> Int
 }

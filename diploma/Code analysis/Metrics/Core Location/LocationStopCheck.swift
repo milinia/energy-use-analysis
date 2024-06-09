@@ -9,6 +9,7 @@ import Foundation
 
 class LocationStopCheck: MetricCheck {
     let regexPattern: String = "(CLLocationManager).+(stopUpdatingLocation)"
+    let useRegexPattern: String = "(CLLocationManager).+(startUpdatingLocation)"
     let regexChecker: RegexCheck
     
     init(regexChecker: RegexCheck) {
@@ -16,8 +17,10 @@ class LocationStopCheck: MetricCheck {
     }
     
     func check(file: DFile) -> [MetricErrorData] {
-        if !regexChecker.checkForPattern(file: file, regexPattern: regexPattern) {
-            return [MetricErrorData(type: Location.unstoppableWork, range: ErrorRange(start: 0, end: 0), file: file, canFixError: false)]
+        if regexChecker.checkForPattern(file: file, regexPattern: useRegexPattern) {
+            if !regexChecker.checkForPattern(file: file, regexPattern: regexPattern) {
+                return [MetricErrorData(type: Location.unstoppableWork, range: ErrorRange(start: 0, end: 0), file: file, canFixError: false)]
+            }
         }
         return []
     }

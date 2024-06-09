@@ -9,60 +9,65 @@ import Foundation
 
 class LocationErrorCorrector: Corrector {
     
-    let file: DFile
-    let classInfo: ClassInfo
+    let classInfo: ClassInfo?
     let regexChecker: RegexChecker
     
-    init(file: DFile, classInfo: ClassInfo, regexChecker: RegexChecker) {
-        self.file = file
+    init(classInfo: ClassInfo?, regexChecker: RegexChecker) {
         self.classInfo = classInfo
         self.regexChecker = regexChecker
     }
     
-    func correct(error: MetricErrorData) -> MetricErrorData {
+    func correct(error: MetricErrorData, fileOffset: Dictionary<String, Int>) -> Int {
+        let offset = fileOffset[error.file.path] ?? 0
         switch error.type {
         case let locationError as Location:
             switch locationError {
             case .highAccuracy:
-                correctHighAccuracyError(error: error)
+                correctHighAccuracyError(error: error, offset: offset)
             case .allowBackgroundWork:
-                correctAllowBackgroundWorkError(error: error)
+                correctAllowBackgroundWorkError(error: error, offset: offset)
             case .pauseUpdatesAutomatically:
-                correctPauseUpdatesAutomaticallyError(error: error)
+                correctPauseUpdatesAutomaticallyError(error: error, offset: offset)
             case .unstoppableWork:
                 correctUnstoppableWorkError(error: error)
             }
         default: break
         }
-        return error
+        return 0
     }
     
-    private func correctHighAccuracyError(error: MetricErrorData) {
-        let lines = Array(file.lines[classInfo.startLine...classInfo.endLine])
-        for i in 0...lines.count - 1 {
-            if regexChecker.checkStringRegex(pattern: ".desiredAccuracy = [kCLLocationAccuracyBestForNavigation|kCLLocationAccuracyBest]+", string: lines[i]) {
-                file.lines[classInfo.startLine + i] = file.lines[classInfo.startLine + i]
-                    .replacingOccurrences(of: "kCLLocationAccuracyBestForNavigation", with: "kCLLocationAccuracyNearestTenMeters")
-                    .replacingOccurrences(of: "kCLLocationAccuracyBest", with: "kCLLocationAccuracyNearestTenMeters")
+    private func correctHighAccuracyError(error: MetricErrorData, offset: Int) {
+        if let classInfo = classInfo {
+            let lines = Array(error.file.lines[classInfo.startLine - 1 + offset...classInfo.endLine - 1 + offset])
+            for i in 0...lines.count - 1 {
+                if regexChecker.checkStringRegex(pattern: ".desiredAccuracy = [kCLLocationAccuracyBestForNavigation|kCLLocationAccuracyBest]+", string: lines[i]) {
+                    error.file.lines[classInfo.startLine - 1 + i + offset] = error.file.lines[classInfo.startLine - 1 + i + offset]
+                        .replacingOccurrences(of: "kCLLocationAccuracyBestForNavigation", with: "kCLLocationAccuracyNearestTenMeters")
+                        .replacingOccurrences(of: "kCLLocationAccuracyBest", with: "kCLLocationAccuracyNearestTenMeters")
+                }
             }
         }
     }
 
     
-    private func correctAllowBackgroundWorkError(error: MetricErrorData) {
-        let lines = Array(file.lines[classInfo.startLine...classInfo.endLine])
-        for i in 0...lines.count - 1 {
-            if regexChecker.checkStringRegex(pattern: ".allowsBackgroundLocationUpdates = true", string: lines[i]) {
-                file.lines[classInfo.startLine + i] = file.lines[classInfo.startLine + i].replacingOccurrences(of: "true", with: "false")
+    private func correctAllowBackgroundWorkError(error: MetricErrorData, offset: Int) {
+        if let classInfo = classInfo {
+            let lines = Array(error.file.lines[classInfo.startLine - 1 + offset...classInfo.endLine - 1 + offset])
+            for i in 0...lines.count - 1 {
+                if regexChecker.checkStringRegex(pattern: ".allowsBackgroundLocationUpdates = true", string: lines[i]) {
+                    error.file.lines[classInfo.startLine - 1 + i + offset] = error.file.lines[classInfo.startLine - 1 + i + offset].replacingOccurrences(of: "true", with: "false")
+                }
             }
         }
     }
     
-    private func correctPauseUpdatesAutomaticallyError(error: MetricErrorData) {
-        let lines = Array(file.lines[classInfo.startLine...classInfo.endLine])
-        for i in 0...lines.count - 1 {
-            if regexChecker.checkStringRegex(pattern: ".pausesLocationUpdatesAutomatically = false", string: lines[i]) {
-                file.lines[classInfo.startLine + i] = file.lines[classInfo.startLine + i].replacingOccurrences(of: "false", with: "true")
+    private func correctPauseUpdatesAutomaticallyError(error: MetricErrorData, offset: Int) {
+        if let classInfo = classInfo {
+            let lines = Array(error.file.lines[classInfo.startLine - 1 + offset...classInfo.endLine - 1 + offset])
+            for i in 0...lines.count - 1 {
+                if regexChecker.checkStringRegex(pattern: ".pausesLocationUpdatesAutomatically = false", string: lines[i]) {
+                    error.file.lines[classInfo.startLine - 1 + i + offset] = error.file.lines[classInfo.startLine - 1 + i + offset].replacingOccurrences(of: "false", with: "true")
+                }
             }
         }
     }

@@ -28,7 +28,7 @@ class QoSDispatchQueueGlobalCheck: MetricCheck {
                 if regexChecker.checkStringRegex(pattern: qosRegexPattern, string: String(fileLines[line])) {
                     errors.append(MetricErrorData(type: QualityOfService.qosForTask, range: ErrorRange(start: line, end: line), 
                                                   file: file,
-                                                  canFixError:  true))
+                                                  canFixError: true))
                 }
             }
         }

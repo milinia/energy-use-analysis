@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct FunctionExecutionTime {
+struct FunctionExecutionTime: Identifiable {
+    var id: UUID = UUID()
     let path: String
     let line: Int
     let functionCall: String

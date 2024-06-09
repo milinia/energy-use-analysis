@@ -11,6 +11,7 @@ protocol RegexChecker {
     func checkTextRegex(pattern: String, text: String) -> [Int]
     func checkStringRegex(pattern: String, string: String) -> Bool
     func checkStringRegexRange(pattern: String, string: String) -> NSRange?
+    func checkLinesRegex(pattern: String, lines: [String]) -> [Int]
 }
 
 final class RegexCheckerImpl: RegexChecker {
@@ -20,7 +21,17 @@ final class RegexCheckerImpl: RegexChecker {
         let lines = text.split(separator: "\n")
         for index in 0...lines.count - 1 {
             if checkStringRegex(pattern: pattern, string: String(lines[index])) {
-                matches.append(index + 1)
+                matches.append(index)
+            }
+        }
+        return matches
+    }
+    
+    func checkLinesRegex(pattern: String, lines: [String]) -> [Int] {
+        var matches: [Int] = []
+        for index in 0...lines.count - 1 {
+            if checkStringRegex(pattern: pattern, string: String(lines[index])) {
+                matches.append(index)
             }
         }
         return matches
@@ -28,12 +39,14 @@ final class RegexCheckerImpl: RegexChecker {
     
     func checkStringRegex(pattern: String, string: String) -> Bool {
         do {
-            let range = NSRange(location: 0, length: string.utf8.count)
+            let range = NSRange(location: 0, length: string.utf16.count)
             let regex = try NSRegularExpression(pattern: pattern)
-            if regex.firstMatch(in: string, range: range) != nil {
-                return true
-            } else {
-                return false
+            if range.location + range.length <= string.utf16.count {
+                if regex.firstMatch(in: string, range: range) != nil {
+                    return true
+                } else {
+                    return false
+                }
             }
         } catch {
             
@@ -43,12 +56,14 @@ final class RegexCheckerImpl: RegexChecker {
     
     func checkStringRegexRange(pattern: String, string: String) -> NSRange? {
         do {
-            let range = NSRange(location: 0, length: string.utf8.count)
+            let range = NSRange(location: 0, length: string.utf16.count)
             let regex = try NSRegularExpression(pattern: pattern)
-            if let match = regex.firstMatch(in: string, range: range) {
-                return match.range
-            } else {
-                return nil
+            if range.location + range.length <= string.utf16.count {
+                if let match = regex.firstMatch(in: string, range: range) {
+                    return match.range
+                } else {
+                    return nil
+                }
             }
         } catch {
             

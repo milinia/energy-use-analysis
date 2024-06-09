@@ -9,31 +9,31 @@ import Foundation
 
 class BrightnessErrorCorrector: Corrector {
     
-    func correct(error: MetricErrorData) -> MetricErrorData {
+    func correct(error: MetricErrorData, fileOffset: Dictionary<String, Int>) -> Int {
         switch error.type {
         case let brightnessError as Brightness:
             switch brightnessError {
             case .highBrightness:
-                break
+                correctHighBrightnessError(error: error)
             case .unableDarkThemeInInfoPlist:
-                break
+                correctUnableDarkThemeInInfoPlistError(error: error)
             case .unableViewDarkTheme:
-                break
+                correctUnableViewDarkThemeError(error: error)
             }
         default: break
         }
-        return error
+        return 0
     }
     
-    private func correctHighBrightnessError() {
+    private func correctHighBrightnessError(error: MetricErrorData) {
         
     }
     
-    private func correctUnableDarkThemeInInfoPlistError() {
+    private func correctUnableDarkThemeInInfoPlistError(error: MetricErrorData) {
         
     }
     
-    private func correctUnableViewDarkThemeError() {
+    private func correctUnableViewDarkThemeError(error: MetricErrorData) {
         
     }
 }

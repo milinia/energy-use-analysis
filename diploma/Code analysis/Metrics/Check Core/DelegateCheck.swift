@@ -18,13 +18,15 @@ final class DelegateCheck {
         self.regexChecker = regexChecker
     }
     
-    func check(file: DFile, dict: inout Dictionary<String, [String]>) {
+    func check(file: DFile) -> Dictionary<String, [String]> {
+        var dict: Dictionary<String, [String]> = [:]
         let locationManagerDelegates = findDelegates(file: file, pattern: coreLocationDelegateRegexPattern)
         let centralManagerDelegates = findDelegates(file: file, pattern: coreBluetoothDelegateRegexPattern)
         let motionManagerDelegates = findDelegates(file: file, pattern: coreMotionhDelegateRegexPattern)
         dict["Core Location"] = locationManagerDelegates
         dict["Core Motion"] = motionManagerDelegates
         dict["Core Bluetooth"] = centralManagerDelegates
+        return dict
     }
     
     private func findDelegates(file: DFile, pattern: String) -> [String] {
