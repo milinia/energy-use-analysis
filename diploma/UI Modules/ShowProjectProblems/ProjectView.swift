@@ -38,8 +38,7 @@ struct ProjectView: View {
                 switch state {
                 case .project:
                     List(project.content, children: \.content, selection: $selectedContent) { item in
-                        let isHasError = (errors?[item.path] != nil) ? true : false
-                        ContentRow(contentData: ContentRowData(content: item, isHasError: isHasError))
+                        ContentRow(contentData: ContentRowData(content: item, isHasError: ((errors?[item.path] != nil) ? true : false)))
                             .onAppear {
                                 saveContent(content: item)
                             }

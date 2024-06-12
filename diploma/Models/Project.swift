@@ -29,7 +29,7 @@ class Project: Codable, Hashable, NSCopying {
     
     func copy(with zone: NSZone? = nil) -> Any {
         var contentCopies: [Content] = []
-        contentCopies.forEach { content in
+        content.forEach { content in
             if let content = content.copy() as? Content {
                 contentCopies.append(content)
             }
@@ -70,6 +70,17 @@ class DFolder: Content {
     init(path: String, content: [Content]) {
         self.сontent = content
         super.init(path: path, content: content)
+    }
+    
+    override func copy(with zone: NSZone? = nil) -> Any {
+        var contentCopies: [Content] = []
+        content?.forEach { content in
+            if let content = content.copy() as? Content {
+                contentCopies.append(content)
+            }
+        }
+        let copy = DFolder(path: path, content: contentCopies)
+        return copy
     }
     
     required init(from decoder: Decoder) throws {

@@ -67,6 +67,9 @@ struct FileView: View {
                                                       viewModel.fixError(file: file, error: error) { dfile in
                                                           viewFile = dfile
                                                           projectErrors?[file.path]?.removeAll(where: {$0.id == error.id})
+                                                          if projectErrors?[file.path] == [] {
+                                                              projectErrors?.removeValue(forKey: file.path)
+                                                          }
                                                       }
                                                   }
                                               }

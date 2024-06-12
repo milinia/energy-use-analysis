@@ -55,11 +55,12 @@ class CodeGeneration {
                             FileSaver.createFile(content: dfile.lines, path: path, name: name)
                         }
                     case let dfolder as DFolder:
-                        if isPodProject && (dfolder.path.relativePath == "Pods") {
-                            copyFolderContent(path: path, folder: dfolder)
-                        } else {
-                            getFolderContent(path: path, folder: dfolder)
-                        }
+                        getFolderContent(path: path, folder: dfolder)
+//                        if isPodProject && (dfolder.path.relativePath == "Pods") {
+//                            copyFolderContent(path: path, folder: dfolder)
+//                        } else {
+//                            getFolderContent(path: path, folder: dfolder)
+//                        }
                     default:
                         break
                     }
@@ -136,28 +137,6 @@ class CodeGeneration {
         } catch {
             
         }
-//        FileSaver.createFolder(path: path, name: folder.path.relativePath ?? "")
-//        let path = path + "/" + folderName
-//        for content in contents {
-//            switch content {
-//            case let dfile as DFile:
-//                let name = dfile.path.relativePath ?? ""
-//                if dfile.path.hasSuffix(".swift") {
-//                    var generatedContent = functionExecutionWrapper.processFile(file: dfile)
-//                    if dfile.path.contains("AppDelegate") && !isAppDelegateAdded {
-//                        generatedContent = addCodeToAppDelegateClass(file: generatedContent)
-//                        isAppDelegateAdded = true
-//                    }
-//                    FileSaver.createFile(content: generatedContent?.lines ?? [], path: path, name: name)
-//                } else {
-//                    FileSaver.createFile(content: dfile.lines, path: path, name: name)
-//                }
-//            case let dfolder as DFolder:
-//                getFolderContent(path: path, folder: dfolder)
-//            default:
-//                break
-//            }
-//        }
     }
     
     private func getFolderContent(path: String, folder: DFolder) {

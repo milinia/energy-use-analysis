@@ -51,10 +51,15 @@ struct ChooseProjectView: View {
                         ProgressView()
                     }
                 } else {
-                    VStack(spacing: 10) {
-                        Text("Open project folder and enter to folder Test")
-                        Text("Then open terminal and run \"sh script.sh\"")
-                        Text("Then run created project and test that you want to check")
+                    VStack(alignment: .center, spacing: 30) {
+                        VStack(alignment: .leading, spacing: 15) {
+                            Text("• Open project folder and enter to folder Test")
+                                .font(.title3)
+                            Text("• Then open terminal and run \"sh script.sh\"")
+                                .font(.title3)
+                            Text("• Then run created project and test that you want to check")
+                                .font(.title3)
+                        }
                         Button("Done") {
                             isProjectAnalysing = true
                             isCodeGenerated = false

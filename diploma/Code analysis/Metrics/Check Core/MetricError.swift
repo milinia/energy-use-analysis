@@ -88,7 +88,7 @@ enum ComputeTask: String, MetricError {
     }
 }
 
-struct MetricErrorData: Identifiable {
+struct MetricErrorData: Identifiable, Equatable {
     let id: UUID = UUID()
     let type: MetricError
     let range: ErrorRange
@@ -111,6 +111,11 @@ struct MetricErrorData: Identifiable {
         self.canFixError = canFixError
         self.functionCall = nil
     }
+    
+    static func == (lhs: MetricErrorData, rhs: MetricErrorData) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
 }
 
 struct ErrorRange {
