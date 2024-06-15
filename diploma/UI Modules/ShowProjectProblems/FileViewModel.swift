@@ -28,12 +28,17 @@ final class FileViewModel: ObservableObject {
     }
     
     
-    func fixError(file: DFile, error: MetricErrorData, completion: @escaping (DFile) -> Void) {
+    func fixError(file: DFile, error: MetricErrorData, completion: @escaping (DFile, Warning?) -> Void) {
         // исправление ошибки
         var newOffset = 0
+        var warning: Warning?
         if let errorType = error.type as? ComputeTask {
             if let functionCall = error.functionCall {
-                newOffset = errorCorrector.correctFunctionCall(functionCall: functionCall, fileOffset: filesOffset)
+                let result = errorCorrector.correctFunctionCall(functionCall: functionCall, fileOffset: filesOffset)
+                newOffset = result.0
+                if result.1 {
+                    warning = Warning(error: error, type: WarningMessage.uiFunction)
+                }
             }
         } else {
             newOffset = errorCorrector.correctError(error: error, fileOffset: filesOffset)
@@ -42,6 +47,7 @@ final class FileViewModel: ObservableObject {
             filesOffset[file.path] = offset + newOffset
         }
         FileSaver.saveFile(file: file)
-        completion(file)
+        completion(file, warning)
     }
 }
+

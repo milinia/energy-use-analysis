@@ -8,7 +8,6 @@
 import Foundation
 
 struct Warning {
-    let file: DFile
-    let line: Int
-    let message: String
+    let error: MetricErrorData
+    let type: MetricError
 }

@@ -63,7 +63,7 @@ class ErrorCorrector {
         }
     }
     
-    func correctFunctionCall(functionCall: FunctionExecutionTime, fileOffset: Dictionary<String, Int>) -> Int {
+    func correctFunctionCall(functionCall: FunctionExecutionTime, fileOffset: Dictionary<String, Int>) -> (Int, Bool) {
         return computeTaskErrorCorrector.correct(function: functionCall, fileOffset: fileOffset)
     }
     

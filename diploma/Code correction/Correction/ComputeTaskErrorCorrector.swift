@@ -32,7 +32,7 @@ class ComputeTaskErrorCorrector {
         self.inheritanceAndImplementation = inheritanceAndImplementation
     }
     
-    func correct(function: FunctionExecutionTime, fileOffset: Dictionary<String, Int>) -> Int{
+    func correct(function: FunctionExecutionTime, fileOffset: Dictionary<String, Int>) -> (Int, Bool) {
         uikitClasses = getUIClasses()
         if !checkFunctionBody(function: function) {
             if !function.isOnMainThread {
@@ -42,7 +42,7 @@ class ComputeTaskErrorCorrector {
                 if let file = projectFiles.filter({$0.path == function.path}).first {
                     let line = file.lines[function.line - 1]
                     let patternOriginalCall = function.functionCall + #"\(.*?\)"#
-                    guard let originalCallRange = regexChecker.checkStringRegexRange(pattern: patternOriginalCall, string: line) else {return 0}
+                    guard let originalCallRange = regexChecker.checkStringRegexRange(pattern: patternOriginalCall, string: line) else {return (0, false)}
                     let originalFunctionCall = (line as NSString).substring(with: originalCallRange)
                     let spaceFromLineStart = line.spaceFromLineStart
                     let dispatchQueueLineStart = String(repeating: " ", count: spaceFromLineStart) + "DispatchQueue.global(qos: .userInitiated).async {"
@@ -66,20 +66,20 @@ class ComputeTaskErrorCorrector {
                         file.lines.insert(argumentLine, at: function.line + offset)
                         file.lines.insert(dispatchQueueLineStart, at: function.line + offset)
                         file.lines[function.line + 3 + offset] = line.replacingOccurrences(of: originalFunctionCall, with: "argument\(count)")
-                        return 3
+                        return (3, false)
                     } else {
                         file.lines.insert(dispatchQueueLineStart, at: function.line - 1 + offset)
                         file.lines[function.line] = String(repeating: " ", count: spaceFromLineStart + 4) + originalFunctionCall
                         file.lines.insert(dispatchQueueLineEnd, at: function.line + 1 + offset)
-                        return 2
+                        return (2, false)
                     }
                 }
             }
         } else {
             // alert! очень затратная ui функция
-            print("UI function")
+            return (0, true)
         }
-        return 0
+        return (0, false)
     }
     
     private func getUIClasses() -> Set<String> {

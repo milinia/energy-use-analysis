@@ -11,6 +11,15 @@ protocol MetricError {
     var errorMessage: String { get }
 }
 
+enum WarningMessage: String, MetricError {
+
+    case uiFunction = "Executing this resource-intensive function that modifies the user interface may lead to reduced application performance."
+    
+    var errorMessage: String {
+        return self.rawValue
+    }
+}
+
 enum Location: String, MetricError {
     
     case highAccuracy = "High location accuracy is selected, which may lead to higher battery consumption."
@@ -88,12 +97,12 @@ enum ComputeTask: String, MetricError {
     }
 }
 
-struct MetricErrorData: Identifiable, Equatable {
+class MetricErrorData: Identifiable, Equatable {
     let id: UUID = UUID()
-    let type: MetricError
+    var type: MetricError
     let range: ErrorRange
     let file: DFile
-    let canFixError: Bool
+    var canFixError: Bool
     let functionCall: FunctionExecutionTime?
     
     init(type: MetricError, range: ErrorRange, file: DFile, canFixError: Bool, functionCall: FunctionExecutionTime) {

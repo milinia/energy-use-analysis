@@ -11,7 +11,7 @@ import AxisTooltip
 
 struct FileView: View {
     @Binding var viewFile: DFile?
-    let errors: [MetricErrorData]?
+    @State var errors: [MetricErrorData]?
     @Binding var projectErrors: Dictionary<String, [MetricErrorData]>?
     @Binding var selectedProject: Project?
     @Binding var projectInfo: ProjectInfo?
@@ -35,6 +35,7 @@ struct FileView: View {
                         let line = lines[index]
                         let string = highlighter.highlight(line)
                         let isErrorLine = lineError[index + 1] == nil ? false : true
+                        let isWarning = lineError[index + 1]?.canFixError == false ? true : false
                         HStack {
                             Text("\(index + 1)")
                                 .font(.caption)
@@ -47,7 +48,7 @@ struct FileView: View {
                                 ZStack(alignment: .trailing) {
                                     Image(systemName: "exclamationmark.triangle.fill")
                                         .frame(alignment: .trailing)
-                                        .foregroundColor(.red)
+                                        .foregroundColor(error.canFixError ? .red : .yellow)
                                         .padding(.horizontal, 6)
                                         .onTapGesture {
                                             isPresented.toggle()
@@ -64,15 +65,24 @@ struct FileView: View {
                                                       .padding(.vertical, 6)
                                                       .frame(width: 200)
                                                   Button("Fix") {
-                                                      viewModel.fixError(file: file, error: error) { dfile in
-                                                          viewFile = dfile
-                                                          projectErrors?[file.path]?.removeAll(where: {$0.id == error.id})
-                                                          if projectErrors?[file.path] == [] {
-                                                              projectErrors?.removeValue(forKey: file.path)
+                                                      viewModel.fixError(file: file, error: error) { dfile, warning  in
+                                                          if let warning = warning {
+                                                              let index = errors?.firstIndex(where: {$0.id == error.id})
+                                                              error.canFixError = false
+                                                              error.type = warning.type
+                                                              errors?[index ?? 0] = error
+                                                          } else {
+                                                              viewFile = dfile
+                                                              projectErrors?[file.path]?.removeAll(where: {$0.id == error.id})
+                                                              if projectErrors?[file.path] == [] {
+                                                                  projectErrors?.removeValue(forKey: file.path)
+                                                              }
                                                           }
                                                       }
                                                   }
+                                                  .opacity(error.canFixError ? 1 : 0)
                                               }
+//                                              .fixedSize()
                                               .padding(6)
                                         })
                                 }
@@ -80,6 +90,7 @@ struct FileView: View {
                             } 
                         }
                         .background(isErrorLine ? Color.red.opacity(0.1) : .clear)
+                        .background(isWarning ? Color.yellow.opacity(0.1) : .clear)
                     }
                 }
                 .frame(maxWidth: .infinity)
